@@ -17,6 +17,7 @@ extern "C" {
 void sendStringtoPenal(const char *str);
 
 uint16_t calculateCRC16(char *addr,uint16_t len);
+uint8_t calculateCheckSum(uint8_t * buf , int length);
 
 #ifdef	__cplusplus
 }

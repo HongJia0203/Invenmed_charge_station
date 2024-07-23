@@ -14,5 +14,7 @@ mcc_generated_files/ext_int.h  \
  mcc_generated_files/../uart_api.h  \
 mcc_generated_files/../timer_api.h  \
  mcc_generated_files/../led_control.h  \
+ mcc_generated_files/../relay_control.h  \
  mcc_generated_files/../engineer_mode.h  \
+ mcc_generated_files/../power_meter.h  \
  mcc_generated_files/../function_api.h 

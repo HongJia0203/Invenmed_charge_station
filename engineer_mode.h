@@ -34,6 +34,12 @@ typedef struct
 
 extern STRUCT_ENGINEER_MODE_TYPE stEngineerModeInfo;
 
+extern void ENGINEERMODE_testLed(void);
+extern void ENGINEERMODE_testRelay(uint8_t u8switch);
+extern void ENGINEERMODE_testGFCI(uint8_t u8switch);
+extern void ENGINEERMODE_testRFID(void);
+extern void ENGINEERMODE_testReturnVerify(void);
+
 #ifdef	__cplusplus
 }
 #endif

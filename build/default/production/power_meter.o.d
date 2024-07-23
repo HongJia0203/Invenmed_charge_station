@@ -1,5 +1,5 @@
-build/default/production/timer_api.o:  \
-timer_api.c  \
+build/default/production/power_meter.o:  \
+power_meter.c  \
 app.h  \
  mcc_generated_files/system.h  \
 mcc_generated_files/system_types.h  \

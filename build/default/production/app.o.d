@@ -13,5 +13,7 @@ mcc_generated_files/pin_manager.h  \
  uart_api.h  \
 timer_api.h  \
 led_control.h  \
+relay_control.h  \
 engineer_mode.h  \
+ power_meter.h  \
 function_api.h 

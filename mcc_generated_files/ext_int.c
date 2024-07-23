@@ -63,7 +63,7 @@
  
  void __attribute__ ((weak)) EX_INT1_CallBack(void)
 {
-    stSystemInfo.stPanelInfo.u8Emergency_Stop_Event = true;
+    stSystemInfo.stInterruptInfo.u8Emergency_Stop_Event = true;
     EX_INT1_InterruptFlagClear();
 }
 

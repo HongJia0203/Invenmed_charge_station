@@ -19,6 +19,7 @@ extern "C" {
 #define GET_CHARGEING_PMU_GET_DATA_COUNT 3
 #define DESPLAY_CHARGEING_PANEL_INFO_TIME 100
 #define DESPLAY_CHARGEING_PANEL_INFO_COUNT 3
+#define CHARGEING_FINISH_FLOW_TIME 0
 
 typedef enum
 {
@@ -29,9 +30,11 @@ typedef enum
 
 typedef enum
 {
-    ePDD_Voltage=0x00,
-    ePDD_Current,
-    ePDD_Power,
+//    ePDD_Voltage=0x00,
+//    ePDD_Current,
+    ePDD_Power=0x00,
+    ePDD_Hour,
+    ePDD_Minute,
 }enumPanel_Display_Data;
 
 typedef struct
@@ -40,6 +43,7 @@ typedef struct
     uint16_t u16Chargeing_CP_Timer;
     uint16_t u16Chargeing_PMU_Timer;
     uint16_t u16Desplay_Charging_Panel_Info_Timer;
+    uint16_t u16Charging_Finish_Flow_Timer;
 }STRUCT_TIMER_TYPE;
 
 typedef struct

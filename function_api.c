@@ -83,3 +83,32 @@ uint16_t calculateCRC16(char *addr,uint16_t len)
   }
   return (uchCRCHi<<8|uchCRCLo);
 }
+
+/*********************************************************************
+ * Function:        uint8_t calculateCheckSum(uint8_t * buf , int length)
+ *
+ * PreCondition:    None
+ *
+ * Input:           None
+ *
+ * Output:          None
+ *
+ * Side Effects:    None
+ *
+ * Overview:        None
+ *
+ * Note:            None
+ ********************************************************************/
+uint8_t calculateCheckSum(uint8_t * buf , int length) {
+	uint32_t checksum=0;
+	uint8_t  u8CS=0;
+	int i;
+	for(i=0 ; i<length ; i++)
+	{
+		checksum+=buf[i];
+	}
+	
+	u8CS = ((uint8_t)(checksum & 0x000000ff));
+	
+	return u8CS;
+}

@@ -1,6 +1,6 @@
 #include "app.h"
 
-#include "delay.h"
+#include "mcc_generated_files/delay.h"
 
 void RELAY_setOnTest() {
     PWM_Disable();

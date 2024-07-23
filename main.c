@@ -4,10 +4,6 @@
 
 #include "app.h"
 
-// 定義數據接收陣列
-uint8_t Panel_Start_Data[10]; 
-size_t Panel_Start_Data_arraySize = 0; 
-
 int main(void) {
     SYSTEM_Initialize();
     WATCHDOG_TimerSoftwareEnable();
@@ -15,7 +11,10 @@ int main(void) {
     PWM_Enable(); 
     
     LED_setSystemOpenLight(); 
-
+    
+    DebugAndRfid_Printf("\n\r\n\rVersion_Date:%d\n\r",VERSION_DATA);
+	DebugAndRfid_Printf("Version_Number:%d\n\r",VERSION_NUMBER);
+    
     while (1) {
         APP_taskUartFlow();
         APP_taskMainFlow();

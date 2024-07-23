@@ -39,6 +39,7 @@
       <itemPath>uart_api.h</itemPath>
       <itemPath>relay_control.h</itemPath>
       <itemPath>engineer_mode.h</itemPath>
+      <itemPath>power_meter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -87,6 +88,7 @@
       <itemPath>uart_api.c</itemPath>
       <itemPath>relay_control.c</itemPath>
       <itemPath>engineer_mode.c</itemPath>
+      <itemPath>power_meter.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

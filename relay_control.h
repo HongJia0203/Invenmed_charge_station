@@ -28,8 +28,8 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+#ifndef RELAY_CONTROL_MODE_H
+#define	RELAY_CONTROL_MODE_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
@@ -66,12 +66,12 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif /* __cplusplus */
-
-void RELAY_setOnTest();
-void RELAY_setOffTest();
-void RELAY_setOn();
-void RELAY_setOff();
-
+    
+extern void RELAY_setOnTest();
+extern void RELAY_setOffTest();
+extern void RELAY_setOn();
+extern void RELAY_setOff();
+    
 #ifdef	__cplusplus
 }
 #endif /* __cplusplus */

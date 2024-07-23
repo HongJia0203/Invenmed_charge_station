@@ -6,6 +6,7 @@
  */
 #include "stdint.h"
 #include "stdbool.h"
+#include "string.h"
 #include <stdio.h>
 
 #include "xc.h"
@@ -22,7 +23,9 @@
 #include "uart_api.h"
 #include "timer_api.h"
 #include "led_control.h"
+#include "relay_control.h"
 #include "engineer_mode.h"
+#include "power_meter.h"
 #include "function_api.h"
 
 #ifndef APP_H
@@ -31,6 +34,13 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//------------  version management information (only number)  -----------------------------------------------------------------------------------------------------------//    
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+#define VERSION_DATA 240723
+#define VERSION_NUMBER 1
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------//    
     
 #define RFID_ID_LENGTH 8 // 定義RFID ID的長度，8byte
 
@@ -72,6 +82,13 @@ typedef enum
 
 typedef enum
 {
+    eCFF_Idel=0x00,
+    eCFF_enterChargeing_step,
+    eCFF_Finish,
+}enumChargeing_Finish_Flow;
+
+typedef enum
+{
     eCF_Idel=0x00,
     eCF_ConfirmVerification,
     eCF_selsectPowerLevel,
@@ -92,14 +109,19 @@ typedef enum
     eCCV_9V,
     eCCV_6V,
     eCCV_3V,
-    eCCV_End,
 }enmCharge_CP_Value;
+
+typedef struct
+{
+    uint8_t u8Chargeing_Finish_Flow;
+    uint8_t u8Rev;
+}STRUCT_SUB_FLOW;
 
 typedef struct
 {
     uint8_t u8Emergency_Stop_Event;
     uint8_t u8Emergency_Stop_Flow;
-}STRUCT_PANEL_TYPE;
+}STRUCT_INTERRUPT_INFO_FLOW;
 
 typedef struct
 {
@@ -111,23 +133,24 @@ typedef struct
     
 typedef struct
 {
-    uint8_t u8Power_Level;
-    uint8_t u32Charge_Time;
-    int iCP_Pin;
+    uint8_t u8Power_Level;    
+    uint8_t u8CP_Pin_Present;
+    uint8_t u8CP_Pin_Past;
+    uint8_t Rev;
+    uint32_t u32Charge_Time;
+    uint8_t u8Charge_Minute;
+    uint8_t u8Charge_Hour;
     STRUCT_POWER_METER_TYPE stPowerMeterInfo; 
 }STRUCT_CHARGE_TYPE;
 
 typedef struct
 {
-    
-}STRUCT_PMU_TYPE;
-
-typedef struct
-{
-    STRUCT_PANEL_TYPE stPanelInfo;
+    STRUCT_INTERRUPT_INFO_FLOW stInterruptInfo;
+    STRUCT_SUB_FLOW stSubFlow;
     STRUCT_CHARGE_TYPE stChargeInfo;
     uint8_t u8System_Flow;
     uint8_t u8Chrageing_Flow;
+    UART_TX_TYPE stPowerMeterTX;
     uint8_t u8Relay_state;
     char cRfid_id_number[RFID_ID_LENGTH + 1]; // 用於存儲RFID ID的陣列多一位用於終止'\0'
     uint8_t u8Rev;
@@ -142,12 +165,12 @@ extern void APP_taskMainFlow(void);
 extern void APP_taskUartFlow(void);
 extern void APP_runPanelFlow(void);
 
-extern void startChargeingFlow(void);
-extern void getCPPinData(void);
+extern void getCPPinValue(void);
 extern void getPMUData(void);
 extern void setPanelDisplay(void);
-
-
+extern void switchCPpinState(void);
+extern void setStartChargringInit(void);
+extern void setChargingTimeInit(void);
 #ifdef	__cplusplus
 }
 #endif
