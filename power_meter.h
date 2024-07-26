@@ -34,8 +34,8 @@ typedef enum
     ePSC_Power_Disable,
     ePSC_Read_Voltage,
     ePSC_Read_Current,
-    ePSC_Read_Power,
-    ePSC_End,
+    ePSC_Read_Power,            
+    ePSC_Null=0xFF,
 }enumPUMSendCmd;
 
 typedef struct 

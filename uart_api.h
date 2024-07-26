@@ -57,6 +57,9 @@ typedef struct
 	uint8_t u8Count;
 }UART_TX_TYPE;
 
+extern UART_DATA_TYPE stUart3Data,stUart4Data;
+extern UART_TX_TYPE stPowerMeterTX;
+
 extern void checkUartDataBuf(void);
 extern void getByteUart3(unsigned char B);
 extern void checkParserUart3(void);

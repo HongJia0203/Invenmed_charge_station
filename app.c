@@ -2,8 +2,6 @@
 
 STRUCT_SYSTEM_TYPE stSystemInfo;
 
-int CPs[NUM_CP] = {0};
-
 char buffer[];
 char hour_buffer[];
 char minute_buffer[];
@@ -85,12 +83,12 @@ void APP_runPanelFlow(void) {
         case eSF_Idel:{
         }break;
         case eSF_Charge:{
-            switch(stSystemInfo.u8Chrageing_Flow)
+            switch(stSystemInfo.stChrage_Flow.u8Chrageing_Flow)
             {
                 case eCF_Idel:{
                 }break;
                 case eCF_ConfirmVerification:{
-                    stSystemInfo.u8Chrageing_Flow = eCF_selsectPowerLevel;
+                    stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_selsectPowerLevel;
                 }break;
                 case eCF_selsectPowerLevel:{
                     if(stSystemInfo.stChargeInfo.u8Power_Level == eCPL_7KW){
@@ -106,7 +104,7 @@ void APP_runPanelFlow(void) {
                         //exception
                     }
                     setStartChargringInit();
-                    stSystemInfo.u8Chrageing_Flow = eCF_startChargeing;
+                    stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_startChargeing;
                 }break;
                 case eCF_startChargeing:{
                         getCPPinValue();
@@ -115,20 +113,20 @@ void APP_runPanelFlow(void) {
                         switchCPpinState();
                         LED_setChargeStateDisplay();
                 }break;
-                case eCF_Finish:{
-                    switch(stSystemInfo.stSubFlow.u8Chargeing_Finish_Flow)
+                case eCF_Checkouts:{
+                    switch(stSystemInfo.stChrage_Flow.stSubFlow.u8Chargeing_Checkouts_Flow)
                     {
-                        case eCFF_enterChargeing_step:{
+                        case eCCF_enterChargeing_Checkouts_step:{
                             RELAY_setOff();
                             TMR2_Stop();
                             sendStringtoPenal("page Total");
                             sendPowerMonitorUtilityData(ePSC_Read_Power);
                             //confirm if here need to add a delay for wait read power can edit by CHARGEING_FINISH_FLOW_TIME
                             stTimerInfo.u16Charging_Finish_Flow_Timer = CHARGEING_FINISH_FLOW_TIME;
-                            stSystemInfo.stSubFlow.u8Chargeing_Finish_Flow = eCFF_Finish;
+                            stSystemInfo.stChrage_Flow.stSubFlow.u8Chargeing_Checkouts_Flow = eCCF_Finish;
                         }break;
-                        case eCFF_Finish:{
-                            if(stTimerInfo.u16Charging_Finish_Flow_Timer = CHARGEING_FINISH_FLOW_TIME == 0){
+                        case eCCF_Finish:{
+                            if(stTimerInfo.u16Charging_Finish_Flow_Timer == 0){
                                 DebugAndRfid_Printf("Total power: %.2f\r\n", (double)stSystemInfo.stChargeInfo.stPowerMeterInfo.fPower);
                                 sprintf(buffer, "Total.t0.txt=\"%.2f\"", (double)stSystemInfo.stChargeInfo.stPowerMeterInfo.fPower);
                                 sendStringtoPenal(buffer);
@@ -142,12 +140,17 @@ void APP_runPanelFlow(void) {
 
                                 sendPowerMonitorUtilityData(ePSC_Power_Disable);
                                  
-                                stSystemInfo.u8Chrageing_Flow = eCF_Idel;
-                                stSystemInfo.stSubFlow.u8Chargeing_Finish_Flow = eCFF_Idel;
+                                stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_Idel;
+                                stSystemInfo.stChrage_Flow.stSubFlow.u8Chargeing_Checkouts_Flow = eCCF_Idel;
                             }
-                        }
+                        }break;
                     }
                 }break;
+                case eCF_Finish:{
+                    LED_setSystemOpenLight();
+                    sendStringtoPenal("page End");
+                    stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_Idel;
+                }
             }
         }
         case eSF_EnginnerMode:{
@@ -272,10 +275,10 @@ void getCPPinValue(void) {
                 printf("HERE is 12V ADC is %d\r\n", adc2_result);
 
                 // 根據測量結果判斷狀態
-                if (CP_VEHICLE_CONNECTED(adc2_result)) CPs[1]++;
-                else if (CP_READY(adc2_result)) CPs[2]++;
-                else if (CP_READY_VENTILATION(adc2_result)) CPs[3]++;
-                else if (CP_NO_VEHICLE(adc2_result)) CPs[0]++;
+                if (CP_VEHICLE_CONNECTED(adc2_result)) stSystemInfo.stChargeInfo.CPs[1]++;
+                else if (CP_READY(adc2_result)) stSystemInfo.stChargeInfo.CPs[2]++;
+                else if (CP_READY_VENTILATION(adc2_result)) stSystemInfo.stChargeInfo.CPs[3]++;
+                else if (CP_NO_VEHICLE(adc2_result)) stSystemInfo.stChargeInfo.CPs[0]++;
                 ADC2_Disable();
                 stTimerGetInfo.u8ADC2_Get_Data_Index = 0;
                 stTimerGetInfo.u8ADC2_Get_Data_Count++;
@@ -288,7 +291,7 @@ void getCPPinValue(void) {
         int sort_max_CP_index = 0;
         int i;
         for (i = 0; i < NUM_CP; i++) {
-        if (CPs[i] > CPs[sort_max_CP_index]) {
+        if (stSystemInfo.stChargeInfo.CPs[i] > stSystemInfo.stChargeInfo.CPs[sort_max_CP_index]) {
             sort_max_CP_index = i;
             }
         }
@@ -413,11 +416,11 @@ void setPanelDisplay(void) {
  ********************************************************************/
 void switchCPpinState(void) {
     if(stSystemInfo.stChargeInfo.u8CP_Pin_Present != stSystemInfo.stChargeInfo.u8CP_Pin_Past){
-        stSystemInfo.stChargeInfo.u8CP_Pin_Present == stSystemInfo.stChargeInfo.u8CP_Pin_Past;
+        stSystemInfo.stChargeInfo.u8CP_Pin_Past = stSystemInfo.stChargeInfo.u8CP_Pin_Present;
         switch(stSystemInfo.stChargeInfo.u8CP_Pin_Present){
             case eCCV_12V:{
                 sendStringtoPenal("page Input");
-                DebugAndRfid_Printf("Ready, no Vehicle Detected\r\n");          
+                DebugAndRfid_Printf("Ready, no Vehicle Detected\r\n");
                 sendPowerMonitorUtilityData(ePSC_Power_Disable);
                 RELAY_setOff();
             }break;

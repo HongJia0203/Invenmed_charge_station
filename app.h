@@ -82,10 +82,10 @@ typedef enum
 
 typedef enum
 {
-    eCFF_Idel=0x00,
-    eCFF_enterChargeing_step,
-    eCFF_Finish,
-}enumChargeing_Finish_Flow;
+    eCCF_Idel=0x00,
+    eCCF_enterChargeing_Checkouts_step,
+    eCCF_Finish,
+}enumChargeing_Checkouts_Flow;
 
 typedef enum
 {
@@ -93,6 +93,7 @@ typedef enum
     eCF_ConfirmVerification,
     eCF_selsectPowerLevel,
     eCF_startChargeing,
+    eCF_Checkouts,
     eCF_Finish,
 }enumChargeing_Flow;
 
@@ -113,9 +114,16 @@ typedef enum
 
 typedef struct
 {
-    uint8_t u8Chargeing_Finish_Flow;
+    uint8_t u8Chargeing_Checkouts_Flow;
     uint8_t u8Rev;
 }STRUCT_SUB_FLOW;
+
+typedef struct
+{
+    uint8_t u8Chrageing_Flow;
+    uint8_t u8Rev;
+    STRUCT_SUB_FLOW stSubFlow;
+}STRUCT_CHARGEING_FLOW;
 
 typedef struct
 {
@@ -133,26 +141,25 @@ typedef struct
     
 typedef struct
 {
-    uint8_t u8Power_Level;    
+    uint8_t u8Power_Level;
     uint8_t u8CP_Pin_Present;
     uint8_t u8CP_Pin_Past;
     uint8_t Rev;
+    int CPs[NUM_CP];
     uint32_t u32Charge_Time;
     uint8_t u8Charge_Minute;
     uint8_t u8Charge_Hour;
-    STRUCT_POWER_METER_TYPE stPowerMeterInfo; 
+    STRUCT_POWER_METER_TYPE stPowerMeterInfo;
 }STRUCT_CHARGE_TYPE;
 
 typedef struct
 {
     STRUCT_INTERRUPT_INFO_FLOW stInterruptInfo;
-    STRUCT_SUB_FLOW stSubFlow;
+    STRUCT_CHARGEING_FLOW stChrage_Flow;
     STRUCT_CHARGE_TYPE stChargeInfo;
     uint8_t u8System_Flow;
-    uint8_t u8Chrageing_Flow;
-    UART_TX_TYPE stPowerMeterTX;
     uint8_t u8Relay_state;
-    char cRfid_id_number[RFID_ID_LENGTH + 1]; // 用於存儲RFID ID的陣列多一位用於終止'\0'
+    char cRFID_ID_Number[RFID_ID_LENGTH + 1]; // 用於存儲RFID ID的陣列多一位用於終止'\0'
     uint8_t u8Rev;
 }STRUCT_SYSTEM_TYPE;
 

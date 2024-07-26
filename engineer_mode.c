@@ -92,7 +92,7 @@ void ENGINEERMODE_testGFCI(uint8_t u8switch) {
  ********************************************************************/
 void ENGINEERMODE_testRFID(void) {
     char rfid_number[9]; 
-    memcpy(rfid_number,&stSystemInfo.cRfid_id_number,9);
+    memcpy(rfid_number,&stSystemInfo.cRFID_ID_Number,9);
     sendStringtoPenal(rfid_number);
 }
 

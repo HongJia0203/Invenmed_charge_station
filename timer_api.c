@@ -40,7 +40,7 @@ void tickTimer1ms(void) {
     if(stTimerInfo.u16Charging_Finish_Flow_Timer){
         stTimerInfo.u16Charging_Finish_Flow_Timer--;
     }
-    if(stSystemInfo.stPowerMeterTX.u8Tx_Delay){
-        stSystemInfo.stPowerMeterTX.u8Tx_Delay--;
+    if(stPowerMeterTX.u8Tx_Delay){
+        stPowerMeterTX.u8Tx_Delay--;
     }
 }

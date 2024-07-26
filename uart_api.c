@@ -1,6 +1,7 @@
 #include "app.h"
 
 UART_DATA_TYPE stUart3Data,stUart4Data ={0};
+UART_TX_TYPE stPowerMeterTX ={0};
 
 void checkUartDataBuf(void) {
     while (UART3_IsRxReady())
@@ -131,18 +132,18 @@ void decodeUart3Data(void) {
             switch(option){
                 case PANEL_PAGECASE_MODE_7KW_OPTION:{                    
                     stSystemInfo.u8System_Flow = eSF_Charge;
-                    stSystemInfo.u8Chrageing_Flow = eCF_selsectPowerLevel;
+                    stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_selsectPowerLevel;
                     stSystemInfo.stChargeInfo.u8Power_Level = eCPL_7KW;
                     
                 }
                 case PANEL_PAGECASE_MODE_9KW_OPTION:{
                     stSystemInfo.u8System_Flow = eSF_Charge;
-                    stSystemInfo.u8Chrageing_Flow = eCF_selsectPowerLevel;
+                    stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_selsectPowerLevel;
                     stSystemInfo.stChargeInfo.u8Power_Level = eCPL_9KW;
                 }
                 case PANEL_PAGECASE_MODE_12KW_OPTION:{
                     stSystemInfo.u8System_Flow = eSF_Charge;
-                    stSystemInfo.u8Chrageing_Flow = eCF_selsectPowerLevel;
+                    stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_selsectPowerLevel;
                     stSystemInfo.stChargeInfo.u8Power_Level = eCPL_12KW;
                 }
                 default:{
@@ -159,25 +160,23 @@ void decodeUart3Data(void) {
 void getByteUart4(unsigned char B){
     switch (stUart4Data.u8InBufLen)
     {
-        case 0:
-        {
+        case 0:{
             if(B == POWER_METER_ACK){
                 stUart4Data.u8UartBuf[stUart4Data.u8WIBufIdx][stUart4Data.u8InBufLen++] = B;
             }
             else if(B == POWER_METER_NACK){
-                stSystemInfo.stPowerMeterTX.u8Tx_Delay = 0;
+                stPowerMeterTX.u8Tx_Delay = 0;
             }
             else if(B == POWER_METER_CSFAIL){
-                memset(stSystemInfo.stPowerMeterTX.u8Buf,0,TX_BUFFER_LENGTH);
-                stSystemInfo.stPowerMeterTX.u8Status = idle;
+                memset(stPowerMeterTX.u8Buf,0,TX_BUFFER_LENGTH);
+                stPowerMeterTX.u8Status = idle;
             }
             else{
                 stUart4Data.u8TargetBufLen = 0;
                 stUart4Data.u8InBufLen = 0;
             }
         }break;
-        case 1:
-        {
+        case 1:{
             stUart4Data.u8UartBuf[stUart4Data.u8WIBufIdx][stUart4Data.u8InBufLen++] = B;
             stUart4Data.u8TargetBufLen = B;
         }break;
@@ -243,8 +242,8 @@ void decodeUart4Data(void){
             //unknown instruction response
         }break;
     }
-    stSystemInfo.stPowerMeterTX.u8Status = idle;
-    stPowerMeterInfo.u8Cmd_Type = ePSC_End;
+    stPowerMeterTX.u8Status = idle;
+    stPowerMeterInfo.u8Cmd_Type = ePSC_Null;
     stUart4Data.u8ROBufIdx = (stUart4Data.u8ROBufIdx + 1) % DEF_BUF_NUM;
 }
 
