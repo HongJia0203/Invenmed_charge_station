@@ -123,10 +123,13 @@ void decodeUart3Data(void) {
             }
         }break;
         case PANEL_PAGESTART_MODE:{
+            stSystemInfo.u8System_Flow = eSF_Idel;
         }break;
         case PANEL_PAGEVERIFY_MODE:{
+            stSystemInfo.u8System_Flow = eSF_Idel;
         }break;
         case PANEL_INFORMATION_MODE:{
+            stSystemInfo.u8System_Flow = eSF_Idel;
         }break;
         case PANEL_PAGECASE_MODE:{
             switch(option){
