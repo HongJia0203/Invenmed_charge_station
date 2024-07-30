@@ -25,9 +25,11 @@ char cost_buffer[];
 void APP_interruptOccurredAtEX1(void) {
     if(stSystemInfo.stInterruptInfo.u8Emergency_Stop_Event){
         stSystemInfo.stInterruptInfo.u8Emergency_Stop_Event = false;
-        stSystemInfo.u8System_Flow = eSF_Emergency;
-        stSystemInfo.stInterruptInfo.u8Emergency_Stop_Flow = eESF_enterEmergency_Step;
-        RELAY_setOff();
+        if(stSystemInfo.u8System_Flow != eSF_Emergency){
+            stSystemInfo.u8System_Flow = eSF_Emergency;
+            stSystemInfo.stInterruptInfo.u8Emergency_Stop_Flow = eESF_enterEmergency_Step;
+            RELAY_setOff();
+        }
     }
     switch(stSystemInfo.stInterruptInfo.u8Emergency_Stop_Flow)
     {
@@ -262,6 +264,7 @@ void getCPPinValue(void) {
     {
         case 0:{
             ADC2_Enable();
+            ADC2_ChannelSelect(CP_ADC);
             ADC2_SoftwareTriggerEnable();
             stTimerInfo.u16Chargeing_CP_Timer = GET_CHARGEING_CP_TIME;
             stTimerGetInfo.u8ADC2_Get_Data_Index = 1;
@@ -270,16 +273,18 @@ void getCPPinValue(void) {
             if(stTimerInfo.u16Chargeing_CP_Timer == 0)
             {
                 ADC2_SoftwareTriggerDisable();
-                uint16_t adc2_result;
-                adc2_result = ADC2BUF2;
+                while(!ADC2_IsConversionComplete(CP_ADC));
+                uint16_t adc2_result = ADC2_ConversionResultGet(CP_ADC);
+                ADC2_Disable();
+//                uint16_t adc2_result;
+//                adc2_result = ADC2BUF2;
                 printf("HERE is 12V ADC is %d\r\n", adc2_result);
 
                 // 根據測量結果判斷狀態
                 if (CP_VEHICLE_CONNECTED(adc2_result)) stSystemInfo.stChargeInfo.CPs[1]++;
                 else if (CP_READY(adc2_result)) stSystemInfo.stChargeInfo.CPs[2]++;
                 else if (CP_READY_VENTILATION(adc2_result)) stSystemInfo.stChargeInfo.CPs[3]++;
-                else if (CP_NO_VEHICLE(adc2_result)) stSystemInfo.stChargeInfo.CPs[0]++;
-                ADC2_Disable();
+                else if (CP_NO_VEHICLE(adc2_result)) stSystemInfo.stChargeInfo.CPs[0]++;                
                 stTimerGetInfo.u8ADC2_Get_Data_Index = 0;
                 stTimerGetInfo.u8ADC2_Get_Data_Count++;
             }

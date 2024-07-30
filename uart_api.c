@@ -133,7 +133,7 @@ void decodeUart3Data(void) {
         }break;
         case PANEL_PAGECASE_MODE:{
             switch(option){
-                case PANEL_PAGECASE_MODE_7KW_OPTION:{                    
+                case PANEL_PAGECASE_MODE_7KW_OPTION:{
                     stSystemInfo.u8System_Flow = eSF_Charge;
                     stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_selsectPowerLevel;
                     stSystemInfo.stChargeInfo.u8Power_Level = eCPL_7KW;
