@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=chargingStationV5.X
+PROJECTNAME=Invenmed_charge_station
 
 # Active Configuration
 DEFAULTCONF=default

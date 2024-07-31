@@ -12,7 +12,7 @@ int main(void) {
     
     LED_setSystemOpenLight(); 
     
-    DebugAndRfid_Printf("\n\r\n\rVersion_Date:%d\n\r",VERSION_DATA);
+    DebugAndRfid_Printf("Version_Date:%d\n\r",VERSION_DATA);
 	DebugAndRfid_Printf("Version_Number:%d\n\r",VERSION_NUMBER);
     
     while (1) {
