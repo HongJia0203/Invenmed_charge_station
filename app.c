@@ -318,15 +318,15 @@ void APP_taskUartFlow(void)
  *
  * Note:            None
  ********************************************************************/
-void getCPPinValue(void)
-{
+void getCPPinValue(void) {
+    uint16_t adc2_result = ADC2_ConversionResultGet(CP_ADC);
     ADC2_Enable();
     ADC2_ChannelSelect(CP_ADC);
     ADC2_SoftwareTriggerEnable();
     DELAY_microseconds(50);
     ADC2_SoftwareTriggerDisable();
-    while (!ADC2_IsConversionComplete(CP_ADC))
-        uint16_t adc2_result = ADC2_ConversionResultGet(CP_ADC);
+    while (!ADC2_IsConversionComplete(CP_ADC));
+       adc2_result = ADC2_ConversionResultGet(CP_ADC);
     ADC2_Disable();
     //                uint16_t adc2_result;
     //                adc2_result = ADC2BUF2;
@@ -342,24 +342,20 @@ void getCPPinValue(void)
     else if (CP_NO_VEHICLE(adc2_result))
         stSystemInfo.stChargeInfo.CPs[0]++;
     stTimerGetInfo.u8ADC2_Get_Data_Count++;
-}
 
 
-if (stTimerGetInfo.u8ADC2_Get_Data_Count == GET_CHARGEING_CP_COUNT)
-{
-    int sort_max_CP_index = 0;
-    int i;
-    for (i = 0; i < NUM_CP; i++)
-    {
-        if (stSystemInfo.stChargeInfo.CPs[i] > stSystemInfo.stChargeInfo.CPs[sort_max_CP_index])
-        {
-            sort_max_CP_index = i;
+    if (stTimerGetInfo.u8ADC2_Get_Data_Count == GET_CHARGEING_CP_COUNT) {
+        int sort_max_CP_index = 0;
+        int i;
+        for (i = 0; i < NUM_CP; i++) {
+            if (stSystemInfo.stChargeInfo.CPs[i] > stSystemInfo.stChargeInfo.CPs[sort_max_CP_index]) {
+                sort_max_CP_index = i;
+            }
         }
+        stSystemInfo.stChargeInfo.u8CP_Pin_Present = sort_max_CP_index;
+        stTimerGetInfo.u8ADC2_Get_Data_Count = 0;
     }
-    stSystemInfo.stChargeInfo.u8CP_Pin_Present = sort_max_CP_index;
-    stTimerGetInfo.u8ADC2_Get_Data_Count = 0;
 }
-
 /*********************************************************************
  * Function:        void getPMUData(void)
  *
