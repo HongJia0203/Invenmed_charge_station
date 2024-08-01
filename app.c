@@ -110,6 +110,7 @@ void APP_runPanelFlow(void)
         break;
         case eCF_ConfirmVerification:
         {
+            DebugAndRfid_Printf("ConfirmVerification.\r\n");
             stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_selsectPowerLevel;
         }
         break;
@@ -117,14 +118,17 @@ void APP_runPanelFlow(void)
         {
             if (stSystemInfo.stChargeInfo.u8Power_Level == eCPL_7KW)
             {
+                DebugAndRfid_Printf("Select 7KW\r\n");
                 PWM_DutyCycleSet(PWM_GENERATOR_5, PWM_DUTYCYCLE_7KW);
             }
             else if (stSystemInfo.stChargeInfo.u8Power_Level == eCPL_9KW)
             {
+                DebugAndRfid_Printf("Select 9KW\r\n");
                 PWM_DutyCycleSet(PWM_GENERATOR_5, PWM_DUTYCYCLE_9KW);
             }
             else if (stSystemInfo.stChargeInfo.u8Power_Level == eCPL_12KW)
             {
+                DebugAndRfid_Printf("Select 12KW\r\n");
                 PWM_DutyCycleSet(PWM_GENERATOR_5, PWM_DUTYCYCLE_12KW);
             }
             else
@@ -323,10 +327,10 @@ void getCPPinValue(void) {
     ADC2_Enable();
     ADC2_ChannelSelect(CP_ADC);
     ADC2_SoftwareTriggerEnable();
-    DELAY_microseconds(50);
+    for(int i=0;i<1000;i++){}
     ADC2_SoftwareTriggerDisable();
     while (!ADC2_IsConversionComplete(CP_ADC));
-       adc2_result = ADC2_ConversionResultGet(CP_ADC);
+    adc2_result = ADC2_ConversionResultGet(CP_ADC);
     ADC2_Disable();
     //                uint16_t adc2_result;
     //                adc2_result = ADC2BUF2;
@@ -600,3 +604,4 @@ void setChargingTimeInit(void)
     stSystemInfo.stChargeInfo.u8Charge_Hour = 0;
     stSystemInfo.stChargeInfo.u8Charge_Minute = 0;
 }
+

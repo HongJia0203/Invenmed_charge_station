@@ -137,7 +137,6 @@ void decodeUart3Data(void) {
                     stSystemInfo.u8System_Flow = eSF_Charge;
                     stSystemInfo.stChrage_Flow.u8Chrageing_Flow = eCF_selsectPowerLevel;
                     stSystemInfo.stChargeInfo.u8Power_Level = eCPL_7KW;
-                    
                 }
                 case PANEL_PAGECASE_MODE_9KW_OPTION:{
                     stSystemInfo.u8System_Flow = eSF_Charge;
