@@ -61,10 +61,10 @@ static void (*ADC2_DefaultInterruptHandler)(void) = NULL;
 
 void ADC2_Initialize (void)
 {
-    // ASAM disabled; ADDMABM disabled; ADSIDL disabled; DONE disabled; SIMSAM Sequential; FORM Absolute decimal result, unsigned, right-justified; SAMP disabled; SSRC Clearing sample bit ends sampling and starts conversion; AD12B 12-bit; ADON disabled; SSRCG disabled; 
-    AD2CON1 = 0x400;
-    // CSCNA disabled; VCFG0 AVDD; VCFG1 AVSS; ALTS disabled; BUFM disabled; SMPI Generates interrupt after completion of every sample/conversion operation; CHPS 1 Channel; 
-    AD2CON2 = 0x00;
+    // ASAM enabled; ADDMABM disabled; ADSIDL disabled; DONE disabled; SIMSAM Sequential; FORM Absolute decimal result, unsigned, right-justified; SAMP disabled; SSRC Clearing sample bit ends sampling and starts conversion; AD12B 12-bit; ADON disabled; SSRCG disabled; 
+    AD2CON1 = 0x404;
+    // CSCNA enabled; VCFG0 AVDD; VCFG1 AVSS; ALTS disabled; BUFM disabled; SMPI Generates interrupt after completion of every 3rd sample/conversion operation; CHPS 1 Channel; 
+    AD2CON2 = 0x408;
     // SAMC 6; ADRC FOSC/2; ADCS 2; 
     AD2CON3 = 0x602;
     // CH0SA OA2/AN0; CH0SB OA2/AN0; CH0NB VREFL; CH0NA VREFL; 

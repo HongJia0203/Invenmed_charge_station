@@ -61,7 +61,7 @@ void PIN_MANAGER_Initialize (void)
     /****************************************************************************
      * Setting the Output Latch SFR(s)
      ***************************************************************************/
-    LATA = 0x0088;
+    LATA = 0x0008;
     LATB = 0x0AA0;
     LATC = 0x0044;
 
@@ -75,7 +75,7 @@ void PIN_MANAGER_Initialize (void)
     /****************************************************************************
      * Setting the Weak Pull Up and Weak Pull Down SFR(s)
      ***************************************************************************/
-    CNPDA = 0x0000;
+    CNPDA = 0x0080;
     CNPDB = 0x0000;
     CNPDC = 0x0000;
     CNPUA = 0x0000;
@@ -101,20 +101,20 @@ void PIN_MANAGER_Initialize (void)
      ***************************************************************************/
     __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
 
-    RPINR0bits.INT1R = 0x0013;    //RA3->EXT_INT:INT1
-    RPOR2bits.RP39R = 0x001D;    //RB7->UART4:U4TX
-    RPINR28bits.U4RXR = 0x0028;    //RB8->UART4:U4RX
-    RPINR18bits.U1RXR = 0x0036;    //RC6->UART1:U1RX
-    RPOR5bits.RP48R = 0x0008;    //RC0->SPI2:SDO2
     RPOR3bits.RP41R = 0x0001;    //RB9->UART1:U1TX
-    RPOR4bits.RP43R = 0x0003;    //RB11->UART2:U2TX
-    RPINR27bits.U3RXR = 0x0026;    //RB6->UART3:U3RX
-    RPINR22bits.SCK2R = 0x0024;    //RB4->SPI2:SCK2OUT
+    RPINR0bits.INT1R = 0x0013;    //RA3->EXT_INT:INT1
+    RPINR19bits.U2RXR = 0x002A;    //RB10->UART2:U2RX
+    RPINR28bits.U4RXR = 0x0028;    //RB8->UART4:U4RX
+    RPINR22bits.SDI2R = 0x0018;    //RA8->SPI2:SDI2
     RPOR1bits.RP36R = 0x0009;    //RB4->SPI2:SCK2OUT
     RPOR1bits.RP37R = 0x001B;    //RB5->UART3:U3TX
+    RPOR2bits.RP39R = 0x001D;    //RB7->UART4:U4TX
     RPOR5bits.RP49R = 0x000A;    //RC1->SPI2:SS2OUT
-    RPINR22bits.SDI2R = 0x0018;    //RA8->SPI2:SDI2
-    RPINR19bits.U2RXR = 0x002A;    //RB10->UART2:U2RX
+    RPOR4bits.RP43R = 0x0003;    //RB11->UART2:U2TX
+    RPINR22bits.SCK2R = 0x0024;    //RB4->SPI2:SCK2OUT
+    RPINR27bits.U3RXR = 0x0026;    //RB6->UART3:U3RX
+    RPINR18bits.U1RXR = 0x0036;    //RC6->UART1:U1RX
+    RPOR5bits.RP48R = 0x0008;    //RC0->SPI2:SDO2
 
     __builtin_write_OSCCONL(OSCCON | 0x40); // lock PPS
 }

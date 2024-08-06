@@ -2394,7 +2394,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ADC2" registerAlias="ADCON3"/>
-         <value>1282</value>
+         <value>1538</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ADC2" registerAlias="ADCON4"/>
@@ -2526,7 +2526,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC2" registerAlias="ADCON3" settingAlias="SAMC"/>
-         <value>5</value>
+         <value>6</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC2" registerAlias="ADCON4" settingAlias="ADDMAEN"/>
@@ -15322,7 +15322,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="CNPDA"/>
-         <value>0</value>
+         <value>128</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="CNPDB"/>
@@ -15346,7 +15346,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="LATA"/>
-         <value>136</value>
+         <value>8</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="LATB"/>
@@ -15802,7 +15802,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="CNPDA" settingAlias="CNPDA7"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="CNPDA" settingAlias="CNPDA8"/>
@@ -16082,7 +16082,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="LATA" settingAlias="LATA7"/>
-         <value>set</value>
+         <value>clear</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="LATA" settingAlias="LATA8"/>
@@ -19912,15 +19912,15 @@
       </entry>
       <entry>
          <file>mcc_generated_files\adc1.h</file>
-         <hash>2c21aab4563579653980b0c9f16872b0d80a295aa5f19d44be6d018155d469f6</hash>
+         <hash>68f075a6c0d2da8803c3421b45a154f1c2b130e44dc24a89fedae104ad905fb0</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\adc2.c</file>
-         <hash>7f30de464a4f20ba71507b78d765a90b83bd5e22c9c8ac6d8ca22ee3f30d2edf</hash>
+         <hash>a061451eab19822fd07910687c6a7655f7f08ad2d40625b99edfdb559f72857a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\adc2.h</file>
-         <hash>6b3b6e40ad219933007fd8d94bbff69aab623e5418d167386a2cac2fdc222356</hash>
+         <hash>2301c2a111ffae2fa19cfec5beed4e3329f5abc5d2cb8c3aa2f432827d373a24</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\adc_module_features.h</file>
@@ -19956,7 +19956,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\interrupt_manager.c</file>
-         <hash>bd86f65233fd3dc67222b4c8c80f7d3cd69dda40c095b1e41dc53a10b583b9a5</hash>
+         <hash>b4797da38466b835455e0873e67473f516526328923754ca3b1cf44c0f62a5e6</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\interrupt_manager.h</file>
@@ -19968,11 +19968,11 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>dcad8a2c9ac9d66e3f1faba51f1d343046f050c4a8b98f40c821de16b964f14a</hash>
+         <hash>f1c2121b3ed615c44eeb4c809e26547d8493789ab3b11d23f15820b4c2dd1e63</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>18b9fa7ed38d5bbadf3d64fc13376c86ef9c989a47c1d07d3c0e2be42454916d</hash>
+         <hash>64f9de37fe099cf13b5865a36606740306e2024cecb89607f1bab7f661fe0cc0</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -20012,7 +20012,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>5414c6b48f69ea9a5077f33a02f9a33cdb40f5e28819ae56acb2eab58bcaae8f</hash>
+         <hash>68c0396f755db0ab2c66e5028c606e3cd62164d7bee01e9bc43379400875e8a7</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>

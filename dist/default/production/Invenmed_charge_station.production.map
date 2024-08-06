@@ -1,13 +1,16 @@
-Microchip Technology Inc, v2.10 (A)
+Microchip Technology Inc, v2.10 (B)
 
 Tool Name:
   c:\program files\microchip\xc16\v2.10\bin\bin\..\bin/elf-ld.exe
 
 Command:
   -p33EP128GM604 \
+  --mdfp=C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.5.258/xc16 \
   -o \
   dist/default/production/Invenmed_charge_station.production.elf \
   -Lc:/program files/microchip/xc16/v2.10/bin/bin/.. \
+  -LC:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.5.258/xc16/bin/../support/PIC24E/gld \
+  -LC:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.5.258/xc16/bin/../support/dsPIC33E/gld \
   -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../lib \
   -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/PIC24E/gld \
   -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/PIC24F/gld \
@@ -249,7 +252,7 @@ CodeGuard RAM Memory:
   boot    (none)
 
 
-xc16-ld 2.10 (A)
+xc16-ld 2.10 (B)
 
 Default Code Model: Small
 Default Data Model: Large
@@ -260,14 +263,14 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x307c          0x48ba  (18618)
-.const                      0x327c               0x528           0x7bc  (1980)
-.text                       0x37a4              0x29dc          0x3eca  (16074)
-.dinit                      0x6180                0xfe           0x17d  (381)
-.text                       0x627e               0x614           0x91e  (2334)
-.init.delay32               0x6892                0x1c            0x2a  (42)
-.text                       0x68ae                0x32            0x4b  (75)
+.const                      0x327c               0x588           0x84c  (2124)
+.text                       0x3804              0x29ca          0x3eaf  (16047)
+.dinit                      0x61ce                0xfe           0x17d  (381)
+.text                       0x62cc               0x616           0x921  (2337)
+.init.delay32               0x68e2                0x1c            0x2a  (42)
+.text                       0x68fe                0x32            0x4b  (75)
 
-                 Total "program" memory used (bytes):         0x9a50  (39504) 30%
+                 Total "program" memory used (bytes):         0x9ac8  (39624) 30%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x4000]
@@ -486,336 +489,336 @@ External Symbols in Program Memory (by address):
                   0x00315c                  __dunpack2exit
                   0x003166                  __dPropagateNaN
                   0x003184                  _floorl
-                  0x0037a4                  _LED_setBlue
-                  0x003a4a                  _LED_setGreen
-                  0x003cf0                  _LED_setRed
-                  0x003f96                  _LED_setWhite
-                  0x003fc6                  _LED_setSpace
-                  0x003ff6                  _LED_setSystemOpenLight
-                  0x004036                  _LED_Test
-                  0x0040cc                  _LED_setChargeStateDisplay
-                  0x00410c                  _checkUartDataBuf
-                  0x004130                  _getByteUart3
-                  0x004220                  _checkParserUart3
-                  0x004236                  _decodeUart3Data
-                  0x004400                  _getByteUart4
-                  0x00452c                  _checkParserUart4
-                  0x004542                  _decodeUart4Data
-                  0x004722                  _UART_sendMonitorData
-                  0x00474a                  _UART_sendPowerMonitorUtilityData
-                  0x004774                  _UART_sendMonitorStr
-                  0x00478a                  _UART_sendPowerMonitorUtilityStr
-                  0x004868                  _APP_interruptOccurredAtEX1
-                  0x004908                  _APP_runPanelFlow
-                  0x004ae0                  _APP_taskMainFlow
-                  0x004aea                  _APP_taskUartFlow
-                  0x004af4                  _getCPPinValue
-                  0x004bdc                  _getPMUData
-                  0x004c30                  _setPanelDisplay
-                  0x004ce6                  _switchCPpinState
-                  0x004d64                  _setStartChargringInit
-                  0x004d9c                  _setChargingTimeInit
-                  0x004db6                  _UART4_Initialize
-                  0x004dea                  _UART4_SetTxInterruptHandler
-                  0x004e08                  _UART4_SetRxInterruptHandler
-                  0x004e26                  _UART4_Read
-                  0x004e52                  _UART4_Write
-                  0x004e7c                  _UART4_IsRxReady
-                  0x004e92                  _UART4_IsTxReady
-                  0x004ec6                  _UART4_IsTxDone
-                  0x004f54                  _UART4_ReadBuffer
-                  0x004f8e                  _UART4_WriteBuffer
-                  0x004fc8                  _UART4_TransferStatusGet
-                  0x005010                  _UART4_Peek
-                  0x005030                  _UART4_ReceiveBufferIsEmpty
-                  0x005040                  _UART4_TransmitBufferIsFull
-                  0x005050                  _UART4_StatusGet
-                  0x005058                  _UART4_TransmitBufferSizeGet
-                  0x005086                  _UART4_ReceiveBufferSizeGet
-                  0x0050b4                  _UART4_Enable
-                  0x0050be                  _UART4_Disable
-                  0x0050c8                  _UART2_Initialize
-                  0x0050fc                  _UART2_SetTxInterruptHandler
-                  0x00511a                  _UART2_SetRxInterruptHandler
-                  0x005138                  _UART2_Read
-                  0x005164                  _UART2_Write
-                  0x00518e                  _UART2_IsRxReady
-                  0x0051a4                  _UART2_IsTxReady
-                  0x0051d8                  _UART2_IsTxDone
-                  0x005266                  _UART2_ReadBuffer
-                  0x0052a0                  _UART2_WriteBuffer
-                  0x0052da                  _UART2_TransferStatusGet
-                  0x00531e                  _UART2_Peek
-                  0x00533e                  _UART2_ReceiveBufferIsEmpty
-                  0x00534e                  _UART2_TransmitBufferIsFull
-                  0x00535e                  _UART2_StatusGet
-                  0x005366                  _UART2_TransmitBufferSizeGet
-                  0x005394                  _UART2_ReceiveBufferSizeGet
-                  0x0053c2                  _UART2_Enable
-                  0x0053cc                  _UART2_Disable
-                  0x0053d6                  _UART1_Initialize
-                  0x00540a                  _UART1_SetTxInterruptHandler
-                  0x005428                  _UART1_SetRxInterruptHandler
-                  0x005446                  _UART1_Read
-                  0x005472                  _UART1_Write
-                  0x00549c                  _UART1_IsRxReady
-                  0x0054b2                  _UART1_IsTxReady
-                  0x0054e6                  _UART1_IsTxDone
-                  0x005574                  _UART1_ReadBuffer
-                  0x0055ae                  _UART1_WriteBuffer
-                  0x0055e8                  _UART1_TransferStatusGet
-                  0x00562c                  _UART1_Peek
-                  0x00564c                  _UART1_ReceiveBufferIsEmpty
-                  0x00565c                  _UART1_TransmitBufferIsFull
-                  0x00566c                  _UART1_StatusGet
-                  0x005674                  _UART1_TransmitBufferSizeGet
-                  0x0056a2                  _UART1_ReceiveBufferSizeGet
-                  0x0056d0                  _UART1_Enable
-                  0x0056da                  _UART1_Disable
-                  0x0056e4                  _UART3_Initialize
-                  0x005718                  _UART3_SetTxInterruptHandler
-                  0x005736                  _UART3_SetRxInterruptHandler
-                  0x005754                  _UART3_Read
-                  0x005780                  _UART3_Write
-                  0x0057aa                  _UART3_IsRxReady
-                  0x0057c0                  _UART3_IsTxReady
-                  0x0057f4                  _UART3_IsTxDone
-                  0x005882                  _UART3_ReadBuffer
-                  0x0058bc                  _UART3_WriteBuffer
-                  0x0058f6                  _UART3_TransferStatusGet
-                  0x005928                  _UART3_Peek
-                  0x005948                  _UART3_ReceiveBufferIsEmpty
-                  0x005958                  _UART3_TransmitBufferIsFull
-                  0x005968                  _UART3_StatusGet
-                  0x005970                  _UART3_TransmitBufferSizeGet
-                  0x00599e                  _UART3_ReceiveBufferSizeGet
-                  0x0059cc                  _UART3_Enable
-                  0x0059d6                  _UART3_Disable
-                  0x0059e0                  _actionPowerMonitorUtility
-                  0x005a3e                  _sendPowerMonitorUtilityData
-                  0x005a8c                  _processPowerMeterCmd
-                  0x005c1a                  _PWM_Initialize
-                  0x005d84                  _PWM_SpecialEvent_Tasks
-                  0x005d9e                  _PWM_Generator1_Tasks
-                  0x005db8                  _PWM_Generator2_Tasks
-                  0x005dd2                  _PWM_Generator3_Tasks
-                  0x005dec                  _PWM_Generator4_Tasks
-                  0x005e06                  _PWM_Generator5_Tasks
-                  0x005e20                  _PWM_Generator6_Tasks
-                  0x005e34                  _SPI2_Initialize
-                  0x005e46                  _SPI2_Exchange
-                  0x005e76                  _SPI2_ExchangeBuffer
-                  0x005f40                  _SPI2_Exchange8bit
-                  0x005f50                  _SPI2_Exchange8bitBuffer
-                  0x005f64                  _SPI2_StatusGet
-                  0x005f6c                  _RESET_GetCause
-                  0x006078                  _RESET_CauseClearAll
-                  0x006080                  _PIN_MANAGER_Initialize
-                  0x00627e                  _sendStringtoPenal
-                  0x0062a4                  _calculateCRC16
-                  0x006302                  _calculateCheckSum
-                  0x00633e                  _TMR2_Initialize
-                  0x006362                  _TMR2_Period16BitSet
-                  0x006374                  _TMR2_Period16BitGet
-                  0x00637c                  _TMR2_Counter16BitSet
-                  0x00638e                  _TMR2_Counter16BitGet
-                  0x00639c                  _TMR2_SetInterruptHandler
-                  0x0063ac                  _TMR2_Start
-                  0x0063bc                  _TMR2_Stop
-                  0x0063c6                  _TMR2_GetElapsedThenClear
-                  0x0063de                  _TMR2_SoftwareCounterGet
-                  0x0063ea                  _TMR2_SoftwareCounterClear
-                  0x0063f6                  _TMR3_Initialize
-                  0x00641a                  _TMR3_Period16BitSet
-                  0x00642c                  _TMR3_Period16BitGet
-                  0x006434                  _TMR3_Counter16BitSet
-                  0x006446                  _TMR3_Counter16BitGet
-                  0x006454                  _TMR3_SetInterruptHandler
-                  0x006464                  _TMR3_Start
-                  0x006474                  _TMR3_Stop
-                  0x00647e                  _TMR3_GetElapsedThenClear
-                  0x006496                  _TMR3_SoftwareCounterGet
-                  0x0064a2                  _TMR3_SoftwareCounterClear
-                  0x00650e                  _RELAY_setOnTest
-                  0x00652c                  _RELAY_setOffTest
-                  0x006540                  _RELAY_setOn
-                  0x006556                  _RELAY_setOff
-                  0x006562                  _INTERRUPT_Initialize
-                  0x006612                  _TMR2_CallBack
-                  0x006644                  _TMR3_CallBack
-                  0x00664c                  _tickTimer1ms
-                  0x006694                  _ENGINEERMODE_testLed
-                  0x0066a2                  _ENGINEERMODE_testRelay
-                  0x0066be                  _ENGINEERMODE_testGFCI
-                  0x0066da                  _ENGINEERMODE_testRFID
-                  0x0066f0                  _ENGINEERMODE_testReturnVerify
-                  0x0066f6                  _DELAY_milliseconds
-                  0x006718                  _DELAY_microseconds
-                  0x00674c                  _CLOCK_Initialize
-                  0x0067b8                  _main
-                  0x006804                  _SYSTEM_Initialize
-                  0x00682c                  _ADC2_Initialize
-                  0x006854                  _ADC2_SetInterruptHandler
-                  0x006860                  _ADC1_Initialize
-                  0x006886                  _ADC1_SetInterruptHandler
-                  0x006892                  ___delay32
-                  0x0068bc                  _EXT_INT_Initialize
+                  0x003804                  _LED_setBlue
+                  0x003aaa                  _LED_setGreen
+                  0x003d50                  _LED_setRed
+                  0x003ff6                  _LED_setWhite
+                  0x004026                  _LED_setSpace
+                  0x004056                  _LED_setSystemOpenLight
+                  0x004096                  _LED_Test
+                  0x00412c                  _LED_setChargeStateDisplay
+                  0x004170                  _checkUartDataBuf
+                  0x004194                  _getByteUart3
+                  0x004284                  _checkParserUart3
+                  0x00429a                  _decodeUart3Data
+                  0x004464                  _getByteUart4
+                  0x004590                  _checkParserUart4
+                  0x0045a6                  _decodeUart4Data
+                  0x004786                  _UART_sendMonitorData
+                  0x0047ae                  _UART_sendPowerMonitorUtilityData
+                  0x0047d8                  _UART_sendMonitorStr
+                  0x0047ee                  _UART_sendPowerMonitorUtilityStr
+                  0x0048a8                  _APP_interruptOccurredAtEX1
+                  0x00494c                  _APP_runPanelFlow
+                  0x004b30                  _APP_taskMainFlow
+                  0x004b3a                  _APP_taskUartFlow
+                  0x004b44                  _getCPPinValue
+                  0x004c28                  _getPMUData
+                  0x004c7c                  _setPanelDisplay
+                  0x004d32                  _switchCPpinState
+                  0x004db0                  _setStartChargringInit
+                  0x004de8                  _setChargingTimeInit
+                  0x004e02                  _UART4_Initialize
+                  0x004e36                  _UART4_SetTxInterruptHandler
+                  0x004e54                  _UART4_SetRxInterruptHandler
+                  0x004e72                  _UART4_Read
+                  0x004e9e                  _UART4_Write
+                  0x004ec8                  _UART4_IsRxReady
+                  0x004ede                  _UART4_IsTxReady
+                  0x004f12                  _UART4_IsTxDone
+                  0x004fa0                  _UART4_ReadBuffer
+                  0x004fda                  _UART4_WriteBuffer
+                  0x005014                  _UART4_TransferStatusGet
+                  0x00505c                  _UART4_Peek
+                  0x00507c                  _UART4_ReceiveBufferIsEmpty
+                  0x00508c                  _UART4_TransmitBufferIsFull
+                  0x00509c                  _UART4_StatusGet
+                  0x0050a4                  _UART4_TransmitBufferSizeGet
+                  0x0050d2                  _UART4_ReceiveBufferSizeGet
+                  0x005100                  _UART4_Enable
+                  0x00510a                  _UART4_Disable
+                  0x005114                  _UART2_Initialize
+                  0x005148                  _UART2_SetTxInterruptHandler
+                  0x005166                  _UART2_SetRxInterruptHandler
+                  0x005184                  _UART2_Read
+                  0x0051b0                  _UART2_Write
+                  0x0051da                  _UART2_IsRxReady
+                  0x0051f0                  _UART2_IsTxReady
+                  0x005224                  _UART2_IsTxDone
+                  0x0052b2                  _UART2_ReadBuffer
+                  0x0052ec                  _UART2_WriteBuffer
+                  0x005326                  _UART2_TransferStatusGet
+                  0x00536a                  _UART2_Peek
+                  0x00538a                  _UART2_ReceiveBufferIsEmpty
+                  0x00539a                  _UART2_TransmitBufferIsFull
+                  0x0053aa                  _UART2_StatusGet
+                  0x0053b2                  _UART2_TransmitBufferSizeGet
+                  0x0053e0                  _UART2_ReceiveBufferSizeGet
+                  0x00540e                  _UART2_Enable
+                  0x005418                  _UART2_Disable
+                  0x005422                  _UART1_Initialize
+                  0x005456                  _UART1_SetTxInterruptHandler
+                  0x005474                  _UART1_SetRxInterruptHandler
+                  0x005492                  _UART1_Read
+                  0x0054be                  _UART1_Write
+                  0x0054e8                  _UART1_IsRxReady
+                  0x0054fe                  _UART1_IsTxReady
+                  0x005532                  _UART1_IsTxDone
+                  0x0055c0                  _UART1_ReadBuffer
+                  0x0055fa                  _UART1_WriteBuffer
+                  0x005634                  _UART1_TransferStatusGet
+                  0x005678                  _UART1_Peek
+                  0x005698                  _UART1_ReceiveBufferIsEmpty
+                  0x0056a8                  _UART1_TransmitBufferIsFull
+                  0x0056b8                  _UART1_StatusGet
+                  0x0056c0                  _UART1_TransmitBufferSizeGet
+                  0x0056ee                  _UART1_ReceiveBufferSizeGet
+                  0x00571c                  _UART1_Enable
+                  0x005726                  _UART1_Disable
+                  0x005730                  _UART3_Initialize
+                  0x005764                  _UART3_SetTxInterruptHandler
+                  0x005782                  _UART3_SetRxInterruptHandler
+                  0x0057a0                  _UART3_Read
+                  0x0057cc                  _UART3_Write
+                  0x0057f6                  _UART3_IsRxReady
+                  0x00580c                  _UART3_IsTxReady
+                  0x005840                  _UART3_IsTxDone
+                  0x0058ce                  _UART3_ReadBuffer
+                  0x005908                  _UART3_WriteBuffer
+                  0x005942                  _UART3_TransferStatusGet
+                  0x005974                  _UART3_Peek
+                  0x005994                  _UART3_ReceiveBufferIsEmpty
+                  0x0059a4                  _UART3_TransmitBufferIsFull
+                  0x0059b4                  _UART3_StatusGet
+                  0x0059bc                  _UART3_TransmitBufferSizeGet
+                  0x0059ea                  _UART3_ReceiveBufferSizeGet
+                  0x005a18                  _UART3_Enable
+                  0x005a22                  _UART3_Disable
+                  0x005a2c                  _actionPowerMonitorUtility
+                  0x005a8a                  _sendPowerMonitorUtilityData
+                  0x005ad8                  _processPowerMeterCmd
+                  0x005c66                  _PWM_Initialize
+                  0x005dd0                  _PWM_SpecialEvent_Tasks
+                  0x005dea                  _PWM_Generator1_Tasks
+                  0x005e04                  _PWM_Generator2_Tasks
+                  0x005e1e                  _PWM_Generator3_Tasks
+                  0x005e38                  _PWM_Generator4_Tasks
+                  0x005e52                  _PWM_Generator5_Tasks
+                  0x005e6c                  _PWM_Generator6_Tasks
+                  0x005e80                  _SPI2_Initialize
+                  0x005e92                  _SPI2_Exchange
+                  0x005ec2                  _SPI2_ExchangeBuffer
+                  0x005f8c                  _SPI2_Exchange8bit
+                  0x005f9c                  _SPI2_Exchange8bitBuffer
+                  0x005fb0                  _SPI2_StatusGet
+                  0x005fb8                  _RESET_GetCause
+                  0x0060c4                  _RESET_CauseClearAll
+                  0x0060cc                  _PIN_MANAGER_Initialize
+                  0x0062cc                  _sendStringtoPenal
+                  0x0062f2                  _calculateCRC16
+                  0x006350                  _calculateCheckSum
+                  0x00638c                  _TMR2_Initialize
+                  0x0063b0                  _TMR2_Period16BitSet
+                  0x0063c2                  _TMR2_Period16BitGet
+                  0x0063ca                  _TMR2_Counter16BitSet
+                  0x0063dc                  _TMR2_Counter16BitGet
+                  0x0063ea                  _TMR2_SetInterruptHandler
+                  0x0063fa                  _TMR2_Start
+                  0x00640a                  _TMR2_Stop
+                  0x006414                  _TMR2_GetElapsedThenClear
+                  0x00642c                  _TMR2_SoftwareCounterGet
+                  0x006438                  _TMR2_SoftwareCounterClear
+                  0x006444                  _TMR3_Initialize
+                  0x006468                  _TMR3_Period16BitSet
+                  0x00647a                  _TMR3_Period16BitGet
+                  0x006482                  _TMR3_Counter16BitSet
+                  0x006494                  _TMR3_Counter16BitGet
+                  0x0064a2                  _TMR3_SetInterruptHandler
+                  0x0064b2                  _TMR3_Start
+                  0x0064c2                  _TMR3_Stop
+                  0x0064cc                  _TMR3_GetElapsedThenClear
+                  0x0064e4                  _TMR3_SoftwareCounterGet
+                  0x0064f0                  _TMR3_SoftwareCounterClear
+                  0x00655c                  _RELAY_setOnTest
+                  0x00657a                  _RELAY_setOffTest
+                  0x00658e                  _RELAY_setOn
+                  0x0065a4                  _RELAY_setOff
+                  0x0065b0                  _INTERRUPT_Initialize
+                  0x006660                  _TMR2_CallBack
+                  0x006692                  _TMR3_CallBack
+                  0x00669a                  _tickTimer1ms
+                  0x0066e2                  _ENGINEERMODE_testLed
+                  0x0066f0                  _ENGINEERMODE_testRelay
+                  0x00670c                  _ENGINEERMODE_testGFCI
+                  0x006728                  _ENGINEERMODE_testRFID
+                  0x00673e                  _ENGINEERMODE_testReturnVerify
+                  0x006744                  _DELAY_milliseconds
+                  0x006766                  _DELAY_microseconds
+                  0x00679a                  _CLOCK_Initialize
+                  0x006806                  _main
+                  0x006852                  _SYSTEM_Initialize
+                  0x00687a                  _ADC2_Initialize
+                  0x0068a4                  _ADC2_SetInterruptHandler
+                  0x0068b0                  _ADC1_Initialize
+                  0x0068d6                  _ADC1_SetInterruptHandler
+                  0x0068e2                  ___delay32
+                  0x00690c                  _EXT_INT_Initialize
                   0x0155fa                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x006860                  _ADC1_Initialize
-                  0x006886                  _ADC1_SetInterruptHandler
-                  0x00682c                  _ADC2_Initialize
-                  0x006854                  _ADC2_SetInterruptHandler
-                  0x004868                  _APP_interruptOccurredAtEX1
-                  0x004908                  _APP_runPanelFlow
-                  0x004ae0                  _APP_taskMainFlow
-                  0x004aea                  _APP_taskUartFlow
-                  0x00674c                  _CLOCK_Initialize
-                  0x006718                  _DELAY_microseconds
-                  0x0066f6                  _DELAY_milliseconds
-                  0x0066be                  _ENGINEERMODE_testGFCI
-                  0x006694                  _ENGINEERMODE_testLed
-                  0x0066da                  _ENGINEERMODE_testRFID
-                  0x0066a2                  _ENGINEERMODE_testRelay
-                  0x0066f0                  _ENGINEERMODE_testReturnVerify
-                  0x0068bc                  _EXT_INT_Initialize
-                  0x006562                  _INTERRUPT_Initialize
-                  0x004036                  _LED_Test
-                  0x0037a4                  _LED_setBlue
-                  0x0040cc                  _LED_setChargeStateDisplay
-                  0x003a4a                  _LED_setGreen
-                  0x003cf0                  _LED_setRed
-                  0x003fc6                  _LED_setSpace
-                  0x003ff6                  _LED_setSystemOpenLight
-                  0x003f96                  _LED_setWhite
-                  0x006080                  _PIN_MANAGER_Initialize
-                  0x005d9e                  _PWM_Generator1_Tasks
-                  0x005db8                  _PWM_Generator2_Tasks
-                  0x005dd2                  _PWM_Generator3_Tasks
-                  0x005dec                  _PWM_Generator4_Tasks
-                  0x005e06                  _PWM_Generator5_Tasks
-                  0x005e20                  _PWM_Generator6_Tasks
-                  0x005c1a                  _PWM_Initialize
-                  0x005d84                  _PWM_SpecialEvent_Tasks
-                  0x006556                  _RELAY_setOff
-                  0x00652c                  _RELAY_setOffTest
-                  0x006540                  _RELAY_setOn
-                  0x00650e                  _RELAY_setOnTest
-                  0x006078                  _RESET_CauseClearAll
-                  0x005f6c                  _RESET_GetCause
-                  0x005e46                  _SPI2_Exchange
-                  0x005f40                  _SPI2_Exchange8bit
-                  0x005f50                  _SPI2_Exchange8bitBuffer
-                  0x005e76                  _SPI2_ExchangeBuffer
-                  0x005e34                  _SPI2_Initialize
-                  0x005f64                  _SPI2_StatusGet
-                  0x006804                  _SYSTEM_Initialize
-                  0x006612                  _TMR2_CallBack
-                  0x00638e                  _TMR2_Counter16BitGet
-                  0x00637c                  _TMR2_Counter16BitSet
-                  0x0063c6                  _TMR2_GetElapsedThenClear
-                  0x00633e                  _TMR2_Initialize
-                  0x006374                  _TMR2_Period16BitGet
-                  0x006362                  _TMR2_Period16BitSet
-                  0x00639c                  _TMR2_SetInterruptHandler
-                  0x0063ea                  _TMR2_SoftwareCounterClear
-                  0x0063de                  _TMR2_SoftwareCounterGet
-                  0x0063ac                  _TMR2_Start
-                  0x0063bc                  _TMR2_Stop
-                  0x006644                  _TMR3_CallBack
-                  0x006446                  _TMR3_Counter16BitGet
-                  0x006434                  _TMR3_Counter16BitSet
-                  0x00647e                  _TMR3_GetElapsedThenClear
-                  0x0063f6                  _TMR3_Initialize
-                  0x00642c                  _TMR3_Period16BitGet
-                  0x00641a                  _TMR3_Period16BitSet
-                  0x006454                  _TMR3_SetInterruptHandler
-                  0x0064a2                  _TMR3_SoftwareCounterClear
-                  0x006496                  _TMR3_SoftwareCounterGet
-                  0x006464                  _TMR3_Start
-                  0x006474                  _TMR3_Stop
-                  0x0056da                  _UART1_Disable
-                  0x0056d0                  _UART1_Enable
-                  0x0053d6                  _UART1_Initialize
-                  0x00549c                  _UART1_IsRxReady
-                  0x0054e6                  _UART1_IsTxDone
-                  0x0054b2                  _UART1_IsTxReady
-                  0x00562c                  _UART1_Peek
-                  0x005446                  _UART1_Read
-                  0x005574                  _UART1_ReadBuffer
-                  0x00564c                  _UART1_ReceiveBufferIsEmpty
-                  0x0056a2                  _UART1_ReceiveBufferSizeGet
-                  0x005428                  _UART1_SetRxInterruptHandler
-                  0x00540a                  _UART1_SetTxInterruptHandler
-                  0x00566c                  _UART1_StatusGet
-                  0x0055e8                  _UART1_TransferStatusGet
-                  0x00565c                  _UART1_TransmitBufferIsFull
-                  0x005674                  _UART1_TransmitBufferSizeGet
-                  0x005472                  _UART1_Write
-                  0x0055ae                  _UART1_WriteBuffer
-                  0x0053cc                  _UART2_Disable
-                  0x0053c2                  _UART2_Enable
-                  0x0050c8                  _UART2_Initialize
-                  0x00518e                  _UART2_IsRxReady
-                  0x0051d8                  _UART2_IsTxDone
-                  0x0051a4                  _UART2_IsTxReady
-                  0x00531e                  _UART2_Peek
-                  0x005138                  _UART2_Read
-                  0x005266                  _UART2_ReadBuffer
-                  0x00533e                  _UART2_ReceiveBufferIsEmpty
-                  0x005394                  _UART2_ReceiveBufferSizeGet
-                  0x00511a                  _UART2_SetRxInterruptHandler
-                  0x0050fc                  _UART2_SetTxInterruptHandler
-                  0x00535e                  _UART2_StatusGet
-                  0x0052da                  _UART2_TransferStatusGet
-                  0x00534e                  _UART2_TransmitBufferIsFull
-                  0x005366                  _UART2_TransmitBufferSizeGet
-                  0x005164                  _UART2_Write
-                  0x0052a0                  _UART2_WriteBuffer
-                  0x0059d6                  _UART3_Disable
-                  0x0059cc                  _UART3_Enable
-                  0x0056e4                  _UART3_Initialize
-                  0x0057aa                  _UART3_IsRxReady
-                  0x0057f4                  _UART3_IsTxDone
-                  0x0057c0                  _UART3_IsTxReady
-                  0x005928                  _UART3_Peek
-                  0x005754                  _UART3_Read
-                  0x005882                  _UART3_ReadBuffer
-                  0x005948                  _UART3_ReceiveBufferIsEmpty
-                  0x00599e                  _UART3_ReceiveBufferSizeGet
-                  0x005736                  _UART3_SetRxInterruptHandler
-                  0x005718                  _UART3_SetTxInterruptHandler
-                  0x005968                  _UART3_StatusGet
-                  0x0058f6                  _UART3_TransferStatusGet
-                  0x005958                  _UART3_TransmitBufferIsFull
-                  0x005970                  _UART3_TransmitBufferSizeGet
-                  0x005780                  _UART3_Write
-                  0x0058bc                  _UART3_WriteBuffer
-                  0x0050be                  _UART4_Disable
-                  0x0050b4                  _UART4_Enable
-                  0x004db6                  _UART4_Initialize
-                  0x004e7c                  _UART4_IsRxReady
-                  0x004ec6                  _UART4_IsTxDone
-                  0x004e92                  _UART4_IsTxReady
-                  0x005010                  _UART4_Peek
-                  0x004e26                  _UART4_Read
-                  0x004f54                  _UART4_ReadBuffer
-                  0x005030                  _UART4_ReceiveBufferIsEmpty
-                  0x005086                  _UART4_ReceiveBufferSizeGet
-                  0x004e08                  _UART4_SetRxInterruptHandler
-                  0x004dea                  _UART4_SetTxInterruptHandler
-                  0x005050                  _UART4_StatusGet
-                  0x004fc8                  _UART4_TransferStatusGet
-                  0x005040                  _UART4_TransmitBufferIsFull
-                  0x005058                  _UART4_TransmitBufferSizeGet
-                  0x004e52                  _UART4_Write
-                  0x004f8e                  _UART4_WriteBuffer
-                  0x004722                  _UART_sendMonitorData
-                  0x004774                  _UART_sendMonitorStr
-                  0x00474a                  _UART_sendPowerMonitorUtilityData
-                  0x00478a                  _UART_sendPowerMonitorUtilityStr
+                  0x0068b0                  _ADC1_Initialize
+                  0x0068d6                  _ADC1_SetInterruptHandler
+                  0x00687a                  _ADC2_Initialize
+                  0x0068a4                  _ADC2_SetInterruptHandler
+                  0x0048a8                  _APP_interruptOccurredAtEX1
+                  0x00494c                  _APP_runPanelFlow
+                  0x004b30                  _APP_taskMainFlow
+                  0x004b3a                  _APP_taskUartFlow
+                  0x00679a                  _CLOCK_Initialize
+                  0x006766                  _DELAY_microseconds
+                  0x006744                  _DELAY_milliseconds
+                  0x00670c                  _ENGINEERMODE_testGFCI
+                  0x0066e2                  _ENGINEERMODE_testLed
+                  0x006728                  _ENGINEERMODE_testRFID
+                  0x0066f0                  _ENGINEERMODE_testRelay
+                  0x00673e                  _ENGINEERMODE_testReturnVerify
+                  0x00690c                  _EXT_INT_Initialize
+                  0x0065b0                  _INTERRUPT_Initialize
+                  0x004096                  _LED_Test
+                  0x003804                  _LED_setBlue
+                  0x00412c                  _LED_setChargeStateDisplay
+                  0x003aaa                  _LED_setGreen
+                  0x003d50                  _LED_setRed
+                  0x004026                  _LED_setSpace
+                  0x004056                  _LED_setSystemOpenLight
+                  0x003ff6                  _LED_setWhite
+                  0x0060cc                  _PIN_MANAGER_Initialize
+                  0x005dea                  _PWM_Generator1_Tasks
+                  0x005e04                  _PWM_Generator2_Tasks
+                  0x005e1e                  _PWM_Generator3_Tasks
+                  0x005e38                  _PWM_Generator4_Tasks
+                  0x005e52                  _PWM_Generator5_Tasks
+                  0x005e6c                  _PWM_Generator6_Tasks
+                  0x005c66                  _PWM_Initialize
+                  0x005dd0                  _PWM_SpecialEvent_Tasks
+                  0x0065a4                  _RELAY_setOff
+                  0x00657a                  _RELAY_setOffTest
+                  0x00658e                  _RELAY_setOn
+                  0x00655c                  _RELAY_setOnTest
+                  0x0060c4                  _RESET_CauseClearAll
+                  0x005fb8                  _RESET_GetCause
+                  0x005e92                  _SPI2_Exchange
+                  0x005f8c                  _SPI2_Exchange8bit
+                  0x005f9c                  _SPI2_Exchange8bitBuffer
+                  0x005ec2                  _SPI2_ExchangeBuffer
+                  0x005e80                  _SPI2_Initialize
+                  0x005fb0                  _SPI2_StatusGet
+                  0x006852                  _SYSTEM_Initialize
+                  0x006660                  _TMR2_CallBack
+                  0x0063dc                  _TMR2_Counter16BitGet
+                  0x0063ca                  _TMR2_Counter16BitSet
+                  0x006414                  _TMR2_GetElapsedThenClear
+                  0x00638c                  _TMR2_Initialize
+                  0x0063c2                  _TMR2_Period16BitGet
+                  0x0063b0                  _TMR2_Period16BitSet
+                  0x0063ea                  _TMR2_SetInterruptHandler
+                  0x006438                  _TMR2_SoftwareCounterClear
+                  0x00642c                  _TMR2_SoftwareCounterGet
+                  0x0063fa                  _TMR2_Start
+                  0x00640a                  _TMR2_Stop
+                  0x006692                  _TMR3_CallBack
+                  0x006494                  _TMR3_Counter16BitGet
+                  0x006482                  _TMR3_Counter16BitSet
+                  0x0064cc                  _TMR3_GetElapsedThenClear
+                  0x006444                  _TMR3_Initialize
+                  0x00647a                  _TMR3_Period16BitGet
+                  0x006468                  _TMR3_Period16BitSet
+                  0x0064a2                  _TMR3_SetInterruptHandler
+                  0x0064f0                  _TMR3_SoftwareCounterClear
+                  0x0064e4                  _TMR3_SoftwareCounterGet
+                  0x0064b2                  _TMR3_Start
+                  0x0064c2                  _TMR3_Stop
+                  0x005726                  _UART1_Disable
+                  0x00571c                  _UART1_Enable
+                  0x005422                  _UART1_Initialize
+                  0x0054e8                  _UART1_IsRxReady
+                  0x005532                  _UART1_IsTxDone
+                  0x0054fe                  _UART1_IsTxReady
+                  0x005678                  _UART1_Peek
+                  0x005492                  _UART1_Read
+                  0x0055c0                  _UART1_ReadBuffer
+                  0x005698                  _UART1_ReceiveBufferIsEmpty
+                  0x0056ee                  _UART1_ReceiveBufferSizeGet
+                  0x005474                  _UART1_SetRxInterruptHandler
+                  0x005456                  _UART1_SetTxInterruptHandler
+                  0x0056b8                  _UART1_StatusGet
+                  0x005634                  _UART1_TransferStatusGet
+                  0x0056a8                  _UART1_TransmitBufferIsFull
+                  0x0056c0                  _UART1_TransmitBufferSizeGet
+                  0x0054be                  _UART1_Write
+                  0x0055fa                  _UART1_WriteBuffer
+                  0x005418                  _UART2_Disable
+                  0x00540e                  _UART2_Enable
+                  0x005114                  _UART2_Initialize
+                  0x0051da                  _UART2_IsRxReady
+                  0x005224                  _UART2_IsTxDone
+                  0x0051f0                  _UART2_IsTxReady
+                  0x00536a                  _UART2_Peek
+                  0x005184                  _UART2_Read
+                  0x0052b2                  _UART2_ReadBuffer
+                  0x00538a                  _UART2_ReceiveBufferIsEmpty
+                  0x0053e0                  _UART2_ReceiveBufferSizeGet
+                  0x005166                  _UART2_SetRxInterruptHandler
+                  0x005148                  _UART2_SetTxInterruptHandler
+                  0x0053aa                  _UART2_StatusGet
+                  0x005326                  _UART2_TransferStatusGet
+                  0x00539a                  _UART2_TransmitBufferIsFull
+                  0x0053b2                  _UART2_TransmitBufferSizeGet
+                  0x0051b0                  _UART2_Write
+                  0x0052ec                  _UART2_WriteBuffer
+                  0x005a22                  _UART3_Disable
+                  0x005a18                  _UART3_Enable
+                  0x005730                  _UART3_Initialize
+                  0x0057f6                  _UART3_IsRxReady
+                  0x005840                  _UART3_IsTxDone
+                  0x00580c                  _UART3_IsTxReady
+                  0x005974                  _UART3_Peek
+                  0x0057a0                  _UART3_Read
+                  0x0058ce                  _UART3_ReadBuffer
+                  0x005994                  _UART3_ReceiveBufferIsEmpty
+                  0x0059ea                  _UART3_ReceiveBufferSizeGet
+                  0x005782                  _UART3_SetRxInterruptHandler
+                  0x005764                  _UART3_SetTxInterruptHandler
+                  0x0059b4                  _UART3_StatusGet
+                  0x005942                  _UART3_TransferStatusGet
+                  0x0059a4                  _UART3_TransmitBufferIsFull
+                  0x0059bc                  _UART3_TransmitBufferSizeGet
+                  0x0057cc                  _UART3_Write
+                  0x005908                  _UART3_WriteBuffer
+                  0x00510a                  _UART4_Disable
+                  0x005100                  _UART4_Enable
+                  0x004e02                  _UART4_Initialize
+                  0x004ec8                  _UART4_IsRxReady
+                  0x004f12                  _UART4_IsTxDone
+                  0x004ede                  _UART4_IsTxReady
+                  0x00505c                  _UART4_Peek
+                  0x004e72                  _UART4_Read
+                  0x004fa0                  _UART4_ReadBuffer
+                  0x00507c                  _UART4_ReceiveBufferIsEmpty
+                  0x0050d2                  _UART4_ReceiveBufferSizeGet
+                  0x004e54                  _UART4_SetRxInterruptHandler
+                  0x004e36                  _UART4_SetTxInterruptHandler
+                  0x00509c                  _UART4_StatusGet
+                  0x005014                  _UART4_TransferStatusGet
+                  0x00508c                  _UART4_TransmitBufferIsFull
+                  0x0050a4                  _UART4_TransmitBufferSizeGet
+                  0x004e9e                  _UART4_Write
+                  0x004fda                  _UART4_WriteBuffer
+                  0x004786                  _UART_sendMonitorData
+                  0x0047d8                  _UART_sendMonitorStr
+                  0x0047ae                  _UART_sendPowerMonitorUtilityData
+                  0x0047ee                  _UART_sendPowerMonitorUtilityStr
                   0x000378                  __AddressError
                   0x0003b8                  __DMACError
                   0x0008ce                  __DefaultInterrupt
@@ -844,7 +847,7 @@ External Symbols in Program Memory (by name):
                   0x00095a                  ___addsf3
                   0x00095a                  ___addsf3x
                   0x0019b0                  ___cvt_u
-                  0x006892                  ___delay32
+                  0x0068e2                  ___delay32
                   0x002ac8                  ___divdf3
                   0x002fb4                  ___divdi3
                   0x000b24                  ___divsf3
@@ -931,38 +934,38 @@ External Symbols in Program Memory (by name):
                   0x000ea0                  __typef
                   0x000e42                  __unpackdnrmf
                   0x000f8c                  __unpackf
-                  0x0059e0                  _actionPowerMonitorUtility
+                  0x005a2c                  _actionPowerMonitorUtility
                   0x002260                  _atoi
-                  0x0062a4                  _calculateCRC16
-                  0x006302                  _calculateCheckSum
-                  0x004220                  _checkParserUart3
-                  0x00452c                  _checkParserUart4
-                  0x00410c                  _checkUartDataBuf
-                  0x004236                  _decodeUart3Data
-                  0x004542                  _decodeUart4Data
+                  0x0062f2                  _calculateCRC16
+                  0x006350                  _calculateCheckSum
+                  0x004284                  _checkParserUart3
+                  0x004590                  _checkParserUart4
+                  0x004170                  _checkUartDataBuf
+                  0x00429a                  _decodeUart3Data
+                  0x0045a6                  _decodeUart4Data
                   0x003184                  _floorl
                   0x0022ac                  _fputs
                   0x0022d8                  _fwrite
-                  0x004130                  _getByteUart3
-                  0x004400                  _getByteUart4
-                  0x004af4                  _getCPPinValue
-                  0x004bdc                  _getPMUData
-                  0x0067b8                  _main
+                  0x004194                  _getByteUart3
+                  0x004464                  _getByteUart4
+                  0x004b44                  _getCPPinValue
+                  0x004c28                  _getPMUData
+                  0x006806                  _main
                   0x001130                  _memcpy
                   0x00113e                  _memset
                   0x001206                  _printf
-                  0x005a8c                  _processPowerMeterCmd
+                  0x005ad8                  _processPowerMeterCmd
                   0x00233e                  _putc
                   0x001216                  _puts
-                  0x005a3e                  _sendPowerMonitorUtilityData
-                  0x00627e                  _sendStringtoPenal
-                  0x004d9c                  _setChargingTimeInit
-                  0x004c30                  _setPanelDisplay
-                  0x004d64                  _setStartChargringInit
+                  0x005a8a                  _sendPowerMonitorUtilityData
+                  0x0062cc                  _sendStringtoPenal
+                  0x004de8                  _setChargingTimeInit
+                  0x004c7c                  _setPanelDisplay
+                  0x004db0                  _setStartChargringInit
                   0x002340                  _strcpy
                   0x00123e                  _strlen
-                  0x004ce6                  _switchCPpinState
-                  0x00664c                  _tickTimer1ms
+                  0x004d32                  _switchCPpinState
+                  0x00669a                  _tickTimer1ms
                   0x002362                  _tolower
                   0x002370                  _toupper
                   0x00126e                  _vfprintf
@@ -1472,7 +1475,7 @@ __FOSCSEL
 
 __FGS             0x0155fa          0x2
  *(__FGS.sec*)
- __FGS.sec        0x0155fa          0x2 /CW/_FGS`{Š
+ __FGS.sec        0x0155fa          0x2 /CW/_FGSÐz
                   0x0155fa                  __FGS.sec
 
 __FUID0
@@ -1490,7 +1493,7 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000      0x3aba6
+.debug_info       0x000000      0x3ab33
  *(.debug_info)
  .debug_info      0x000000        0x86f build/default/production/mcc_generated_files/spi2.o
  .debug_info      0x00086f       0x47fc build/default/production/mcc_generated_files/system.o
@@ -1512,45 +1515,45 @@ __FUID3
  .debug_info      0x012b5e       0x3dbd build/default/production/mcc_generated_files/ext_int.o
  .debug_info      0x01691b       0x3930 build/default/production/main.o
  .debug_info      0x01a24b       0x3b41 build/default/production/led_control.o
- .debug_info      0x01dd8c       0x472f build/default/production/app.o
- .debug_info      0x0224bb       0x3a5e build/default/production/function_api.o
- .debug_info      0x025f19       0x3f2c build/default/production/timer_api.o
- .debug_info      0x029e45       0x4608 build/default/production/uart_api.o
- .debug_info      0x02e44d       0x3a36 build/default/production/relay_control.o
- .debug_info      0x031e83       0x3f60 build/default/production/engineer_mode.o
- .debug_info      0x035de3       0x3cb3 build/default/production/power_meter.o
- .debug_info      0x039a96         0x91 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_info      0x039b27         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.EP_o)
- .debug_info      0x039bb4         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(umodsi3.EP_o)
- .debug_info      0x039c41         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_info      0x039cde         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_info      0x039d7b         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_info      0x039e18         0xa0 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_info      0x039eb8         0xa2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_info      0x039f5a         0x9c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
- .debug_info      0x039ff6         0x9f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_info      0x03a095         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
- .debug_info      0x03a132         0x9e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_info      0x03a1d0         0x91 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_info      0x03a261         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
- .debug_info      0x03a2ec         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.EP_o)
- .debug_info      0x03a379         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.EP_o)
- .debug_info      0x03a404         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.EP_o)
- .debug_info      0x03a494         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.EP_o)
- .debug_info      0x03a521         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
- .debug_info      0x03a5ae         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.EP_o)
- .debug_info      0x03a63a         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.EP_o)
- .debug_info      0x03a6e3         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.EP_o)
- .debug_info      0x03a78c         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.EP_o)
- .debug_info      0x03a835         0xaa c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.EP_o)
- .debug_info      0x03a8df         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.EP_o)
- .debug_info      0x03a96d         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.EP_o)
- .debug_info      0x03a9f8         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.EP_o)
- .debug_info      0x03aa85         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.EP_o)
- .debug_info      0x03ab13         0x93 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.EP_o)
+ .debug_info      0x01dd8c       0x46bc build/default/production/app.o
+ .debug_info      0x022448       0x3a5e build/default/production/function_api.o
+ .debug_info      0x025ea6       0x3f2c build/default/production/timer_api.o
+ .debug_info      0x029dd2       0x4608 build/default/production/uart_api.o
+ .debug_info      0x02e3da       0x3a36 build/default/production/relay_control.o
+ .debug_info      0x031e10       0x3f60 build/default/production/engineer_mode.o
+ .debug_info      0x035d70       0x3cb3 build/default/production/power_meter.o
+ .debug_info      0x039a23         0x91 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_info      0x039ab4         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.EP_o)
+ .debug_info      0x039b41         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(umodsi3.EP_o)
+ .debug_info      0x039bce         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
+ .debug_info      0x039c6b         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
+ .debug_info      0x039d08         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_info      0x039da5         0xa0 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_info      0x039e45         0xa2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_info      0x039ee7         0x9c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
+ .debug_info      0x039f83         0x9f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_info      0x03a022         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
+ .debug_info      0x03a0bf         0x9e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
+ .debug_info      0x03a15d         0x91 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_info      0x03a1ee         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
+ .debug_info      0x03a279         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.EP_o)
+ .debug_info      0x03a306         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.EP_o)
+ .debug_info      0x03a391         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.EP_o)
+ .debug_info      0x03a421         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.EP_o)
+ .debug_info      0x03a4ae         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+ .debug_info      0x03a53b         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.EP_o)
+ .debug_info      0x03a5c7         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.EP_o)
+ .debug_info      0x03a670         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.EP_o)
+ .debug_info      0x03a719         0xa9 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.EP_o)
+ .debug_info      0x03a7c2         0xaa c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.EP_o)
+ .debug_info      0x03a86c         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.EP_o)
+ .debug_info      0x03a8fa         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.EP_o)
+ .debug_info      0x03a985         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.EP_o)
+ .debug_info      0x03aa12         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.EP_o)
+ .debug_info      0x03aaa0         0x93 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.EP_o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x275c
+.debug_abbrev     0x000000       0x274d
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x158 build/default/production/mcc_generated_files/spi2.o
  .debug_abbrev    0x000158        0x13a build/default/production/mcc_generated_files/system.o
@@ -1573,105 +1576,105 @@ __FUID3
  .debug_abbrev    0x0015df        0x12a build/default/production/mcc_generated_files/ext_int.o
  .debug_abbrev    0x001709        0x100 build/default/production/main.o
  .debug_abbrev    0x001809        0x140 build/default/production/led_control.o
- .debug_abbrev    0x001949        0x26d build/default/production/app.o
- .debug_abbrev    0x001bb6        0x146 build/default/production/function_api.o
- .debug_abbrev    0x001cfc        0x15f build/default/production/timer_api.o
- .debug_abbrev    0x001e5b        0x26e build/default/production/uart_api.o
- .debug_abbrev    0x0020c9        0x136 build/default/production/relay_control.o
- .debug_abbrev    0x0021ff        0x17f build/default/production/engineer_mode.o
- .debug_abbrev    0x00237e        0x19a build/default/production/power_meter.o
- .debug_abbrev    0x002518         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_abbrev    0x00252c         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.EP_o)
- .debug_abbrev    0x002540         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(umodsi3.EP_o)
- .debug_abbrev    0x002554         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_abbrev    0x002568         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_abbrev    0x00257c         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_abbrev    0x002590         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_abbrev    0x0025a4         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_abbrev    0x0025b8         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
- .debug_abbrev    0x0025cc         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_abbrev    0x0025e0         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
- .debug_abbrev    0x0025f4         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_abbrev    0x002608         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_abbrev    0x00261c         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
- .debug_abbrev    0x002630         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.EP_o)
- .debug_abbrev    0x002644         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.EP_o)
- .debug_abbrev    0x002658         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.EP_o)
- .debug_abbrev    0x00266c         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.EP_o)
- .debug_abbrev    0x002680         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
- .debug_abbrev    0x002694         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.EP_o)
- .debug_abbrev    0x0026a8         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.EP_o)
- .debug_abbrev    0x0026bc         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.EP_o)
- .debug_abbrev    0x0026d0         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.EP_o)
- .debug_abbrev    0x0026e4         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.EP_o)
- .debug_abbrev    0x0026f8         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.EP_o)
- .debug_abbrev    0x00270c         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.EP_o)
- .debug_abbrev    0x002720         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.EP_o)
- .debug_abbrev    0x002734         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.EP_o)
- .debug_abbrev    0x002748         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.EP_o)
+ .debug_abbrev    0x001949        0x25e build/default/production/app.o
+ .debug_abbrev    0x001ba7        0x146 build/default/production/function_api.o
+ .debug_abbrev    0x001ced        0x15f build/default/production/timer_api.o
+ .debug_abbrev    0x001e4c        0x26e build/default/production/uart_api.o
+ .debug_abbrev    0x0020ba        0x136 build/default/production/relay_control.o
+ .debug_abbrev    0x0021f0        0x17f build/default/production/engineer_mode.o
+ .debug_abbrev    0x00236f        0x19a build/default/production/power_meter.o
+ .debug_abbrev    0x002509         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_abbrev    0x00251d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.EP_o)
+ .debug_abbrev    0x002531         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(umodsi3.EP_o)
+ .debug_abbrev    0x002545         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
+ .debug_abbrev    0x002559         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
+ .debug_abbrev    0x00256d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_abbrev    0x002581         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_abbrev    0x002595         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_abbrev    0x0025a9         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
+ .debug_abbrev    0x0025bd         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_abbrev    0x0025d1         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
+ .debug_abbrev    0x0025e5         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
+ .debug_abbrev    0x0025f9         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_abbrev    0x00260d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
+ .debug_abbrev    0x002621         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.EP_o)
+ .debug_abbrev    0x002635         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.EP_o)
+ .debug_abbrev    0x002649         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.EP_o)
+ .debug_abbrev    0x00265d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.EP_o)
+ .debug_abbrev    0x002671         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+ .debug_abbrev    0x002685         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.EP_o)
+ .debug_abbrev    0x002699         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.EP_o)
+ .debug_abbrev    0x0026ad         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.EP_o)
+ .debug_abbrev    0x0026c1         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.EP_o)
+ .debug_abbrev    0x0026d5         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.EP_o)
+ .debug_abbrev    0x0026e9         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.EP_o)
+ .debug_abbrev    0x0026fd         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.EP_o)
+ .debug_abbrev    0x002711         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.EP_o)
+ .debug_abbrev    0x002725         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.EP_o)
+ .debug_abbrev    0x002739         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.EP_o)
 
-.debug_line       0x000000       0x3704
+.debug_line       0x000000       0x3c46
  *(.debug_line)
- .debug_line      0x000000        0x13f build/default/production/mcc_generated_files/spi2.o
- .debug_line      0x00013f        0x147 build/default/production/mcc_generated_files/system.o
- .debug_line      0x000286        0x180 build/default/production/mcc_generated_files/pwm.o
- .debug_line      0x000406        0x135 build/default/production/mcc_generated_files/traps.o
- .debug_line      0x00053b         0x1a build/default/production/mcc_generated_files/mcc.o
- .debug_line      0x000555        0x100 build/default/production/mcc_generated_files/clock.o
- .debug_line      0x000655        0x10f build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_line      0x000764        0x116 build/default/production/mcc_generated_files/adc1.o
- .debug_line      0x00087a        0x116 build/default/production/mcc_generated_files/adc2.o
- .debug_line      0x000990        0x1e2 build/default/production/mcc_generated_files/uart4.o
- .debug_line      0x000b72        0x1da build/default/production/mcc_generated_files/uart3.o
- .debug_line      0x000d4c        0x1e2 build/default/production/mcc_generated_files/uart2.o
- .debug_line      0x000f2e        0x1fd build/default/production/mcc_generated_files/uart1.o
- .debug_line      0x00112b        0x11c build/default/production/mcc_generated_files/pin_manager.o
- .debug_line      0x001247        0x13e build/default/production/mcc_generated_files/reset.o
- .debug_line      0x001385        0x13e build/default/production/mcc_generated_files/tmr2.o
- .debug_line      0x0014c3         0xa6 build/default/production/mcc_generated_files/delay.o
- .debug_line      0x001569        0x13c build/default/production/mcc_generated_files/tmr3.o
- .debug_line      0x0016a5        0x131 build/default/production/mcc_generated_files/ext_int.o
- .debug_line      0x0017d6        0x129 build/default/production/main.o
- .debug_line      0x0018ff        0x53f build/default/production/led_control.o
- .debug_line      0x001e3e        0x2c0 build/default/production/app.o
- .debug_line      0x0020fe        0x104 build/default/production/function_api.o
- .debug_line      0x002202        0x11a build/default/production/timer_api.o
- .debug_line      0x00231c        0x20b build/default/production/uart_api.o
- .debug_line      0x002527        0x143 build/default/production/relay_control.o
- .debug_line      0x00266a        0x122 build/default/production/engineer_mode.o
- .debug_line      0x00278c        0x159 build/default/production/power_meter.o
- .debug_line      0x0028e5         0x3b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_line      0x002920         0x45 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.EP_o)
- .debug_line      0x002965         0x38 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(umodsi3.EP_o)
- .debug_line      0x00299d        0x136 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_line      0x002ad3        0x124 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_line      0x002bf7         0xcc c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_line      0x002cc3         0x72 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_line      0x002d35         0x7a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_line      0x002daf         0x5e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
- .debug_line      0x002e0d         0x51 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_line      0x002e5e         0x98 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
- .debug_line      0x002ef6         0x79 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_line      0x002f6f         0x1a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(errno.EP_o)
- .debug_line      0x002f89         0x6c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_line      0x002ff5         0x5a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
- .debug_line      0x00304f         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.EP_o)
- .debug_line      0x003089         0x38 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.EP_o)
- .debug_line      0x0030c1         0x59 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.EP_o)
- .debug_line      0x00311a         0x61 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.EP_o)
- .debug_line      0x00317b         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
- .debug_line      0x0031c5         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.EP_o)
- .debug_line      0x0031ff         0xa2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.EP_o)
- .debug_line      0x0032a1        0x100 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.EP_o)
- .debug_line      0x0033a1         0xde c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.EP_o)
- .debug_line      0x00347f         0xe8 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.EP_o)
- .debug_line      0x003567         0x5f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.EP_o)
- .debug_line      0x0035c6         0x45 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.EP_o)
- .debug_line      0x00360b         0x5c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.EP_o)
- .debug_line      0x003667         0x53 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.EP_o)
- .debug_line      0x0036ba         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.EP_o)
+ .debug_line      0x000000        0x173 build/default/production/mcc_generated_files/spi2.o
+ .debug_line      0x000173        0x17b build/default/production/mcc_generated_files/system.o
+ .debug_line      0x0002ee        0x1b4 build/default/production/mcc_generated_files/pwm.o
+ .debug_line      0x0004a2        0x169 build/default/production/mcc_generated_files/traps.o
+ .debug_line      0x00060b         0x1a build/default/production/mcc_generated_files/mcc.o
+ .debug_line      0x000625        0x134 build/default/production/mcc_generated_files/clock.o
+ .debug_line      0x000759        0x143 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_line      0x00089c        0x14a build/default/production/mcc_generated_files/adc1.o
+ .debug_line      0x0009e6        0x14a build/default/production/mcc_generated_files/adc2.o
+ .debug_line      0x000b30        0x216 build/default/production/mcc_generated_files/uart4.o
+ .debug_line      0x000d46        0x20e build/default/production/mcc_generated_files/uart3.o
+ .debug_line      0x000f54        0x216 build/default/production/mcc_generated_files/uart2.o
+ .debug_line      0x00116a        0x231 build/default/production/mcc_generated_files/uart1.o
+ .debug_line      0x00139b        0x150 build/default/production/mcc_generated_files/pin_manager.o
+ .debug_line      0x0014eb        0x172 build/default/production/mcc_generated_files/reset.o
+ .debug_line      0x00165d        0x172 build/default/production/mcc_generated_files/tmr2.o
+ .debug_line      0x0017cf         0xa6 build/default/production/mcc_generated_files/delay.o
+ .debug_line      0x001875        0x170 build/default/production/mcc_generated_files/tmr3.o
+ .debug_line      0x0019e5        0x165 build/default/production/mcc_generated_files/ext_int.o
+ .debug_line      0x001b4a        0x15d build/default/production/main.o
+ .debug_line      0x001ca7        0x574 build/default/production/led_control.o
+ .debug_line      0x00221b        0x2ed build/default/production/app.o
+ .debug_line      0x002508        0x138 build/default/production/function_api.o
+ .debug_line      0x002640        0x14e build/default/production/timer_api.o
+ .debug_line      0x00278e        0x23f build/default/production/uart_api.o
+ .debug_line      0x0029cd        0x177 build/default/production/relay_control.o
+ .debug_line      0x002b44        0x156 build/default/production/engineer_mode.o
+ .debug_line      0x002c9a        0x18d build/default/production/power_meter.o
+ .debug_line      0x002e27         0x3b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_line      0x002e62         0x45 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.EP_o)
+ .debug_line      0x002ea7         0x38 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(umodsi3.EP_o)
+ .debug_line      0x002edf        0x136 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
+ .debug_line      0x003015        0x124 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
+ .debug_line      0x003139         0xcc c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_line      0x003205         0x72 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_line      0x003277         0x7a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_line      0x0032f1         0x5e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
+ .debug_line      0x00334f         0x51 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_line      0x0033a0         0x98 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
+ .debug_line      0x003438         0x79 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
+ .debug_line      0x0034b1         0x1a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(errno.EP_o)
+ .debug_line      0x0034cb         0x6c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_line      0x003537         0x5a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
+ .debug_line      0x003591         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(deqltle.EP_o)
+ .debug_line      0x0035cb         0x38 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dgtge.EP_o)
+ .debug_line      0x003603         0x59 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.EP_o)
+ .debug_line      0x00365c         0x61 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixdfsi.EP_o)
+ .debug_line      0x0036bd         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+ .debug_line      0x003707         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.EP_o)
+ .debug_line      0x003741         0xa2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpadd.EP_o)
+ .debug_line      0x0037e3        0x100 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpdiv.EP_o)
+ .debug_line      0x0038e3         0xde c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpmul.EP_o)
+ .debug_line      0x0039c1         0xe8 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpsubs.EP_o)
+ .debug_line      0x003aa9         0x5f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dcompare.EP_o)
+ .debug_line      0x003b08         0x45 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dtype.EP_o)
+ .debug_line      0x003b4d         0x5c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack.EP_o)
+ .debug_line      0x003ba9         0x53 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dunpack2.EP_o)
+ .debug_line      0x003bfc         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dpropagateNaN.EP_o)
 
-.debug_frame      0x000000       0x1f6c
+.debug_frame      0x000000       0x1f3e
  *(.debug_frame)
  .debug_frame     0x000000         0xb0 build/default/production/mcc_generated_files/spi2.o
  .debug_frame     0x0000b0         0x62 build/default/production/mcc_generated_files/system.o
@@ -1693,15 +1696,15 @@ __FUID3
  .debug_frame     0x001736         0x86 build/default/production/mcc_generated_files/ext_int.o
  .debug_frame     0x0017bc         0x8a build/default/production/main.o
  .debug_frame     0x001846         0xe4 build/default/production/led_control.o
- .debug_frame     0x00192a        0x27a build/default/production/app.o
- .debug_frame     0x001ba4         0x62 build/default/production/function_api.o
- .debug_frame     0x001c06         0x62 build/default/production/timer_api.o
- .debug_frame     0x001c68        0x142 build/default/production/uart_api.o
- .debug_frame     0x001daa         0xca build/default/production/relay_control.o
- .debug_frame     0x001e74         0x96 build/default/production/engineer_mode.o
- .debug_frame     0x001f0a         0x62 build/default/production/power_meter.o
+ .debug_frame     0x00192a        0x24c build/default/production/app.o
+ .debug_frame     0x001b76         0x62 build/default/production/function_api.o
+ .debug_frame     0x001bd8         0x62 build/default/production/timer_api.o
+ .debug_frame     0x001c3a        0x142 build/default/production/uart_api.o
+ .debug_frame     0x001d7c         0xca build/default/production/relay_control.o
+ .debug_frame     0x001e46         0x96 build/default/production/engineer_mode.o
+ .debug_frame     0x001edc         0x62 build/default/production/power_meter.o
 
-.debug_str        0x000000       0x27f6
+.debug_str        0x000000       0x27ee
  *(.debug_str)
  .debug_str       0x000000         0x5a build/default/production/mcc_generated_files/spi2.o
  .debug_str       0x00005a        0x39a build/default/production/mcc_generated_files/system.o
@@ -1722,13 +1725,13 @@ __FUID3
  .debug_str       0x000b4e        0x2cf build/default/production/mcc_generated_files/ext_int.o
  .debug_str       0x000e1d        0x2b6 build/default/production/main.o
  .debug_str       0x0010d3        0x2bf build/default/production/led_control.o
- .debug_str       0x001392        0x325 build/default/production/app.o
- .debug_str       0x0016b7        0x2b6 build/default/production/function_api.o
- .debug_str       0x00196d        0x2de build/default/production/timer_api.o
- .debug_str       0x001c4b        0x344 build/default/production/uart_api.o
- .debug_str       0x001f8f        0x2b6 build/default/production/relay_control.o
- .debug_str       0x002245        0x2db build/default/production/engineer_mode.o
- .debug_str       0x002520        0x2d6 build/default/production/power_meter.o
+ .debug_str       0x001392        0x31d build/default/production/app.o
+ .debug_str       0x0016af        0x2b6 build/default/production/function_api.o
+ .debug_str       0x001965        0x2de build/default/production/timer_api.o
+ .debug_str       0x001c43        0x344 build/default/production/uart_api.o
+ .debug_str       0x001f87        0x2b6 build/default/production/relay_control.o
+ .debug_str       0x00223d        0x2db build/default/production/engineer_mode.o
+ .debug_str       0x002518        0x2d6 build/default/production/power_meter.o
 
 .debug_loc
  *(.debug_loc)
@@ -4034,7 +4037,7 @@ LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a
 END GROUP
 OUTPUT(dist/default/production/Invenmed_charge_station.production.elf elf32-pic30)
-LOAD /CW/_FGS`{Š
+LOAD /CW/_FGSÐz
 LOAD jump_table
 LOAD default_isr
 LOAD data_init
@@ -4508,244 +4511,244 @@ __xc_reference_data
  .ivt._INT1Interrupt
                   0x00003c          0x2 build/default/production/mcc_generated_files/ext_int.o
 
-.const              0xb27c        0x528 load address 0x00327c  
- .const             0xb27c        0x200 build/default/production/function_api.o
- .const             0xb47c        0x1fe build/default/production/app.o
- .const             0xb67a         0x5e build/default/production/engineer_mode.o
- .const             0xb6d8         0x52 build/default/production/led_control.o
- .const             0xb72a         0x40 build/default/production/main.o
- .const             0xb76a         0x24 build/default/production/power_meter.o
- .const             0xb78e         0x16 build/default/production/relay_control.o
+.const              0xb27c        0x588 load address 0x00327c  
+ .const             0xb27c        0x240 build/default/production/app.o
+ .const             0xb4bc        0x200 build/default/production/function_api.o
+ .const             0xb6bc         0x70 build/default/production/led_control.o
+ .const             0xb72c         0x5e build/default/production/engineer_mode.o
+ .const             0xb78a         0x40 build/default/production/main.o
+ .const             0xb7ca         0x24 build/default/production/power_meter.o
+ .const             0xb7ee         0x16 build/default/production/relay_control.o
 
-.text             0x0037a4       0x29dc
- .text            0x0037a4        0x968 build/default/production/led_control.o
-                  0x0037a4                  _LED_setBlue
-                  0x003a4a                  _LED_setGreen
-                  0x003cf0                  _LED_setRed
-                  0x003f96                  _LED_setWhite
-                  0x003fc6                  _LED_setSpace
-                  0x003ff6                  _LED_setSystemOpenLight
-                  0x004036                  _LED_Test
-                  0x0040cc                  _LED_setChargeStateDisplay
- .text            0x00410c        0x694 build/default/production/uart_api.o
-                  0x00410c                  _checkUartDataBuf
-                  0x004130                  _getByteUart3
-                  0x004220                  _checkParserUart3
-                  0x004236                  _decodeUart3Data
-                  0x004400                  _getByteUart4
-                  0x00452c                  _checkParserUart4
-                  0x004542                  _decodeUart4Data
-                  0x004722                  _UART_sendMonitorData
-                  0x00474a                  _UART_sendPowerMonitorUtilityData
-                  0x004774                  _UART_sendMonitorStr
-                  0x00478a                  _UART_sendPowerMonitorUtilityStr
- .text            0x0047a0        0x616 build/default/production/app.o
-                  0x004868                  _APP_interruptOccurredAtEX1
-                  0x004908                  _APP_runPanelFlow
-                  0x004ae0                  _APP_taskMainFlow
-                  0x004aea                  _APP_taskUartFlow
-                  0x004af4                  _getCPPinValue
-                  0x004bdc                  _getPMUData
-                  0x004c30                  _setPanelDisplay
-                  0x004ce6                  _switchCPpinState
-                  0x004d64                  _setStartChargringInit
-                  0x004d9c                  _setChargingTimeInit
- .text            0x004db6        0x312 build/default/production/mcc_generated_files/uart4.o
-                  0x004db6                  _UART4_Initialize
-                  0x004dea                  _UART4_SetTxInterruptHandler
-                  0x004e02                  _UART4_Transmit_CallBack
-                  0x004e08                  _UART4_SetRxInterruptHandler
-                  0x004e20                  _UART4_Receive_CallBack
-                  0x004e26                  _UART4_Read
-                  0x004e52                  _UART4_Write
-                  0x004e7c                  _UART4_IsRxReady
-                  0x004e92                  _UART4_IsTxReady
-                  0x004ec6                  _UART4_IsTxDone
-                  0x004f54                  _UART4_ReadBuffer
-                  0x004f8e                  _UART4_WriteBuffer
-                  0x004fc8                  _UART4_TransferStatusGet
-                  0x005010                  _UART4_Peek
-                  0x005030                  _UART4_ReceiveBufferIsEmpty
-                  0x005040                  _UART4_TransmitBufferIsFull
-                  0x005050                  _UART4_StatusGet
-                  0x005058                  _UART4_TransmitBufferSizeGet
-                  0x005086                  _UART4_ReceiveBufferSizeGet
-                  0x0050b4                  _UART4_Enable
-                  0x0050be                  _UART4_Disable
- .text            0x0050c8        0x30e build/default/production/mcc_generated_files/uart2.o
-                  0x0050c8                  _UART2_Initialize
-                  0x0050fc                  _UART2_SetTxInterruptHandler
-                  0x005114                  _UART2_Transmit_CallBack
-                  0x00511a                  _UART2_SetRxInterruptHandler
-                  0x005132                  _UART2_Receive_CallBack
-                  0x005138                  _UART2_Read
-                  0x005164                  _UART2_Write
-                  0x00518e                  _UART2_IsRxReady
-                  0x0051a4                  _UART2_IsTxReady
-                  0x0051d8                  _UART2_IsTxDone
-                  0x005266                  _UART2_ReadBuffer
-                  0x0052a0                  _UART2_WriteBuffer
-                  0x0052da                  _UART2_TransferStatusGet
-                  0x00531e                  _UART2_Peek
-                  0x00533e                  _UART2_ReceiveBufferIsEmpty
-                  0x00534e                  _UART2_TransmitBufferIsFull
-                  0x00535e                  _UART2_StatusGet
-                  0x005366                  _UART2_TransmitBufferSizeGet
-                  0x005394                  _UART2_ReceiveBufferSizeGet
-                  0x0053c2                  _UART2_Enable
-                  0x0053cc                  _UART2_Disable
- .text            0x0053d6        0x30e build/default/production/mcc_generated_files/uart1.o
-                  0x0053d6                  _UART1_Initialize
-                  0x00540a                  _UART1_SetTxInterruptHandler
-                  0x005422                  _UART1_Transmit_CallBack
-                  0x005428                  _UART1_SetRxInterruptHandler
-                  0x005440                  _UART1_Receive_CallBack
-                  0x005446                  _UART1_Read
-                  0x005472                  _UART1_Write
-                  0x00549c                  _UART1_IsRxReady
-                  0x0054b2                  _UART1_IsTxReady
-                  0x0054e6                  _UART1_IsTxDone
-                  0x005574                  _UART1_ReadBuffer
-                  0x0055ae                  _UART1_WriteBuffer
-                  0x0055e8                  _UART1_TransferStatusGet
-                  0x00562c                  _UART1_Peek
-                  0x00564c                  _UART1_ReceiveBufferIsEmpty
-                  0x00565c                  _UART1_TransmitBufferIsFull
-                  0x00566c                  _UART1_StatusGet
-                  0x005674                  _UART1_TransmitBufferSizeGet
-                  0x0056a2                  _UART1_ReceiveBufferSizeGet
-                  0x0056d0                  _UART1_Enable
-                  0x0056da                  _UART1_Disable
- .text            0x0056e4        0x2fc build/default/production/mcc_generated_files/uart3.o
-                  0x0056e4                  _UART3_Initialize
-                  0x005718                  _UART3_SetTxInterruptHandler
-                  0x005730                  _UART3_Transmit_CallBack
-                  0x005736                  _UART3_SetRxInterruptHandler
-                  0x00574e                  _UART3_Receive_CallBack
-                  0x005754                  _UART3_Read
-                  0x005780                  _UART3_Write
-                  0x0057aa                  _UART3_IsRxReady
-                  0x0057c0                  _UART3_IsTxReady
-                  0x0057f4                  _UART3_IsTxDone
-                  0x005882                  _UART3_ReadBuffer
-                  0x0058bc                  _UART3_WriteBuffer
-                  0x0058f6                  _UART3_TransferStatusGet
-                  0x005928                  _UART3_Peek
-                  0x005948                  _UART3_ReceiveBufferIsEmpty
-                  0x005958                  _UART3_TransmitBufferIsFull
-                  0x005968                  _UART3_StatusGet
-                  0x005970                  _UART3_TransmitBufferSizeGet
-                  0x00599e                  _UART3_ReceiveBufferSizeGet
-                  0x0059cc                  _UART3_Enable
-                  0x0059d6                  _UART3_Disable
- .text            0x0059e0        0x23a build/default/production/power_meter.o
-                  0x0059e0                  _actionPowerMonitorUtility
-                  0x005a3e                  _sendPowerMonitorUtilityData
-                  0x005a8c                  _processPowerMeterCmd
- .text            0x005c1a        0x21a build/default/production/mcc_generated_files/pwm.o
-                  0x005c1a                  _PWM_Initialize
-                  0x005d7e                  _PWM_SpecialEvent_CallBack
-                  0x005d84                  _PWM_SpecialEvent_Tasks
-                  0x005d98                  _PWM_Generator1_CallBack
-                  0x005d9e                  _PWM_Generator1_Tasks
-                  0x005db2                  _PWM_Generator2_CallBack
-                  0x005db8                  _PWM_Generator2_Tasks
-                  0x005dcc                  _PWM_Generator3_CallBack
-                  0x005dd2                  _PWM_Generator3_Tasks
-                  0x005de6                  _PWM_Generator4_CallBack
-                  0x005dec                  _PWM_Generator4_Tasks
-                  0x005e00                  _PWM_Generator5_CallBack
-                  0x005e06                  _PWM_Generator5_Tasks
-                  0x005e1a                  _PWM_Generator6_CallBack
-                  0x005e20                  _PWM_Generator6_Tasks
- .text            0x005e34        0x138 build/default/production/mcc_generated_files/spi2.o
-                  0x005e34                  _SPI2_Initialize
-                  0x005e46                  _SPI2_Exchange
-                  0x005e76                  _SPI2_ExchangeBuffer
-                  0x005f40                  _SPI2_Exchange8bit
-                  0x005f50                  _SPI2_Exchange8bitBuffer
-                  0x005f64                  _SPI2_StatusGet
- .text            0x005f6c        0x114 build/default/production/mcc_generated_files/reset.o
-                  0x005f6c                  _RESET_GetCause
-                  0x005f74                  _RESET_CauseHandler
-                  0x006078                  _RESET_CauseClearAll
- .text            0x006080        0x100 build/default/production/mcc_generated_files/pin_manager.o
-                  0x006080                  _PIN_MANAGER_Initialize
+.text             0x003804       0x29ca
+ .text            0x003804        0x96c build/default/production/led_control.o
+                  0x003804                  _LED_setBlue
+                  0x003aaa                  _LED_setGreen
+                  0x003d50                  _LED_setRed
+                  0x003ff6                  _LED_setWhite
+                  0x004026                  _LED_setSpace
+                  0x004056                  _LED_setSystemOpenLight
+                  0x004096                  _LED_Test
+                  0x00412c                  _LED_setChargeStateDisplay
+ .text            0x004170        0x694 build/default/production/uart_api.o
+                  0x004170                  _checkUartDataBuf
+                  0x004194                  _getByteUart3
+                  0x004284                  _checkParserUart3
+                  0x00429a                  _decodeUart3Data
+                  0x004464                  _getByteUart4
+                  0x004590                  _checkParserUart4
+                  0x0045a6                  _decodeUart4Data
+                  0x004786                  _UART_sendMonitorData
+                  0x0047ae                  _UART_sendPowerMonitorUtilityData
+                  0x0047d8                  _UART_sendMonitorStr
+                  0x0047ee                  _UART_sendPowerMonitorUtilityStr
+ .text            0x004804        0x5fe build/default/production/app.o
+                  0x0048a8                  _APP_interruptOccurredAtEX1
+                  0x00494c                  _APP_runPanelFlow
+                  0x004b30                  _APP_taskMainFlow
+                  0x004b3a                  _APP_taskUartFlow
+                  0x004b44                  _getCPPinValue
+                  0x004c28                  _getPMUData
+                  0x004c7c                  _setPanelDisplay
+                  0x004d32                  _switchCPpinState
+                  0x004db0                  _setStartChargringInit
+                  0x004de8                  _setChargingTimeInit
+ .text            0x004e02        0x312 build/default/production/mcc_generated_files/uart4.o
+                  0x004e02                  _UART4_Initialize
+                  0x004e36                  _UART4_SetTxInterruptHandler
+                  0x004e4e                  _UART4_Transmit_CallBack
+                  0x004e54                  _UART4_SetRxInterruptHandler
+                  0x004e6c                  _UART4_Receive_CallBack
+                  0x004e72                  _UART4_Read
+                  0x004e9e                  _UART4_Write
+                  0x004ec8                  _UART4_IsRxReady
+                  0x004ede                  _UART4_IsTxReady
+                  0x004f12                  _UART4_IsTxDone
+                  0x004fa0                  _UART4_ReadBuffer
+                  0x004fda                  _UART4_WriteBuffer
+                  0x005014                  _UART4_TransferStatusGet
+                  0x00505c                  _UART4_Peek
+                  0x00507c                  _UART4_ReceiveBufferIsEmpty
+                  0x00508c                  _UART4_TransmitBufferIsFull
+                  0x00509c                  _UART4_StatusGet
+                  0x0050a4                  _UART4_TransmitBufferSizeGet
+                  0x0050d2                  _UART4_ReceiveBufferSizeGet
+                  0x005100                  _UART4_Enable
+                  0x00510a                  _UART4_Disable
+ .text            0x005114        0x30e build/default/production/mcc_generated_files/uart2.o
+                  0x005114                  _UART2_Initialize
+                  0x005148                  _UART2_SetTxInterruptHandler
+                  0x005160                  _UART2_Transmit_CallBack
+                  0x005166                  _UART2_SetRxInterruptHandler
+                  0x00517e                  _UART2_Receive_CallBack
+                  0x005184                  _UART2_Read
+                  0x0051b0                  _UART2_Write
+                  0x0051da                  _UART2_IsRxReady
+                  0x0051f0                  _UART2_IsTxReady
+                  0x005224                  _UART2_IsTxDone
+                  0x0052b2                  _UART2_ReadBuffer
+                  0x0052ec                  _UART2_WriteBuffer
+                  0x005326                  _UART2_TransferStatusGet
+                  0x00536a                  _UART2_Peek
+                  0x00538a                  _UART2_ReceiveBufferIsEmpty
+                  0x00539a                  _UART2_TransmitBufferIsFull
+                  0x0053aa                  _UART2_StatusGet
+                  0x0053b2                  _UART2_TransmitBufferSizeGet
+                  0x0053e0                  _UART2_ReceiveBufferSizeGet
+                  0x00540e                  _UART2_Enable
+                  0x005418                  _UART2_Disable
+ .text            0x005422        0x30e build/default/production/mcc_generated_files/uart1.o
+                  0x005422                  _UART1_Initialize
+                  0x005456                  _UART1_SetTxInterruptHandler
+                  0x00546e                  _UART1_Transmit_CallBack
+                  0x005474                  _UART1_SetRxInterruptHandler
+                  0x00548c                  _UART1_Receive_CallBack
+                  0x005492                  _UART1_Read
+                  0x0054be                  _UART1_Write
+                  0x0054e8                  _UART1_IsRxReady
+                  0x0054fe                  _UART1_IsTxReady
+                  0x005532                  _UART1_IsTxDone
+                  0x0055c0                  _UART1_ReadBuffer
+                  0x0055fa                  _UART1_WriteBuffer
+                  0x005634                  _UART1_TransferStatusGet
+                  0x005678                  _UART1_Peek
+                  0x005698                  _UART1_ReceiveBufferIsEmpty
+                  0x0056a8                  _UART1_TransmitBufferIsFull
+                  0x0056b8                  _UART1_StatusGet
+                  0x0056c0                  _UART1_TransmitBufferSizeGet
+                  0x0056ee                  _UART1_ReceiveBufferSizeGet
+                  0x00571c                  _UART1_Enable
+                  0x005726                  _UART1_Disable
+ .text            0x005730        0x2fc build/default/production/mcc_generated_files/uart3.o
+                  0x005730                  _UART3_Initialize
+                  0x005764                  _UART3_SetTxInterruptHandler
+                  0x00577c                  _UART3_Transmit_CallBack
+                  0x005782                  _UART3_SetRxInterruptHandler
+                  0x00579a                  _UART3_Receive_CallBack
+                  0x0057a0                  _UART3_Read
+                  0x0057cc                  _UART3_Write
+                  0x0057f6                  _UART3_IsRxReady
+                  0x00580c                  _UART3_IsTxReady
+                  0x005840                  _UART3_IsTxDone
+                  0x0058ce                  _UART3_ReadBuffer
+                  0x005908                  _UART3_WriteBuffer
+                  0x005942                  _UART3_TransferStatusGet
+                  0x005974                  _UART3_Peek
+                  0x005994                  _UART3_ReceiveBufferIsEmpty
+                  0x0059a4                  _UART3_TransmitBufferIsFull
+                  0x0059b4                  _UART3_StatusGet
+                  0x0059bc                  _UART3_TransmitBufferSizeGet
+                  0x0059ea                  _UART3_ReceiveBufferSizeGet
+                  0x005a18                  _UART3_Enable
+                  0x005a22                  _UART3_Disable
+ .text            0x005a2c        0x23a build/default/production/power_meter.o
+                  0x005a2c                  _actionPowerMonitorUtility
+                  0x005a8a                  _sendPowerMonitorUtilityData
+                  0x005ad8                  _processPowerMeterCmd
+ .text            0x005c66        0x21a build/default/production/mcc_generated_files/pwm.o
+                  0x005c66                  _PWM_Initialize
+                  0x005dca                  _PWM_SpecialEvent_CallBack
+                  0x005dd0                  _PWM_SpecialEvent_Tasks
+                  0x005de4                  _PWM_Generator1_CallBack
+                  0x005dea                  _PWM_Generator1_Tasks
+                  0x005dfe                  _PWM_Generator2_CallBack
+                  0x005e04                  _PWM_Generator2_Tasks
+                  0x005e18                  _PWM_Generator3_CallBack
+                  0x005e1e                  _PWM_Generator3_Tasks
+                  0x005e32                  _PWM_Generator4_CallBack
+                  0x005e38                  _PWM_Generator4_Tasks
+                  0x005e4c                  _PWM_Generator5_CallBack
+                  0x005e52                  _PWM_Generator5_Tasks
+                  0x005e66                  _PWM_Generator6_CallBack
+                  0x005e6c                  _PWM_Generator6_Tasks
+ .text            0x005e80        0x138 build/default/production/mcc_generated_files/spi2.o
+                  0x005e80                  _SPI2_Initialize
+                  0x005e92                  _SPI2_Exchange
+                  0x005ec2                  _SPI2_ExchangeBuffer
+                  0x005f8c                  _SPI2_Exchange8bit
+                  0x005f9c                  _SPI2_Exchange8bitBuffer
+                  0x005fb0                  _SPI2_StatusGet
+ .text            0x005fb8        0x114 build/default/production/mcc_generated_files/reset.o
+                  0x005fb8                  _RESET_GetCause
+                  0x005fc0                  _RESET_CauseHandler
+                  0x0060c4                  _RESET_CauseClearAll
+ .text            0x0060cc        0x102 build/default/production/mcc_generated_files/pin_manager.o
+                  0x0060cc                  _PIN_MANAGER_Initialize
 
-.dinit            0x006180         0xfe
- .dinit           0x006180         0xfe data_init
+.dinit            0x0061ce         0xfe
+ .dinit           0x0061ce         0xfe data_init
 
-.text             0x00627e        0x614
- .text            0x00627e         0xc0 build/default/production/function_api.o
-                  0x00627e                  _sendStringtoPenal
-                  0x0062a4                  _calculateCRC16
-                  0x006302                  _calculateCheckSum
- .text            0x00633e         0xb8 build/default/production/mcc_generated_files/tmr2.o
-                  0x00633e                  _TMR2_Initialize
-                  0x006362                  _TMR2_Period16BitSet
-                  0x006374                  _TMR2_Period16BitGet
-                  0x00637c                  _TMR2_Counter16BitSet
-                  0x00638e                  _TMR2_Counter16BitGet
-                  0x00639c                  _TMR2_SetInterruptHandler
-                  0x0063ac                  _TMR2_Start
-                  0x0063bc                  _TMR2_Stop
-                  0x0063c6                  _TMR2_GetElapsedThenClear
-                  0x0063de                  _TMR2_SoftwareCounterGet
-                  0x0063ea                  _TMR2_SoftwareCounterClear
- .text            0x0063f6         0xb8 build/default/production/mcc_generated_files/tmr3.o
-                  0x0063f6                  _TMR3_Initialize
-                  0x00641a                  _TMR3_Period16BitSet
-                  0x00642c                  _TMR3_Period16BitGet
-                  0x006434                  _TMR3_Counter16BitSet
-                  0x006446                  _TMR3_Counter16BitGet
-                  0x006454                  _TMR3_SetInterruptHandler
-                  0x006464                  _TMR3_Start
-                  0x006474                  _TMR3_Stop
-                  0x00647e                  _TMR3_GetElapsedThenClear
-                  0x006496                  _TMR3_SoftwareCounterGet
-                  0x0064a2                  _TMR3_SoftwareCounterClear
- .text            0x0064ae         0xb4 build/default/production/relay_control.o
-                  0x00650e                  _RELAY_setOnTest
-                  0x00652c                  _RELAY_setOffTest
-                  0x006540                  _RELAY_setOn
-                  0x006556                  _RELAY_setOff
- .text            0x006562         0xb0 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x006562                  _INTERRUPT_Initialize
- .text            0x006612         0x82 build/default/production/timer_api.o
-                  0x006612                  _TMR2_CallBack
-                  0x006644                  _TMR3_CallBack
-                  0x00664c                  _tickTimer1ms
- .text            0x006694         0x62 build/default/production/engineer_mode.o
-                  0x006694                  _ENGINEERMODE_testLed
-                  0x0066a2                  _ENGINEERMODE_testRelay
-                  0x0066be                  _ENGINEERMODE_testGFCI
-                  0x0066da                  _ENGINEERMODE_testRFID
-                  0x0066f0                  _ENGINEERMODE_testReturnVerify
- .text            0x0066f6         0x56 build/default/production/mcc_generated_files/delay.o
-                  0x0066f6                  _DELAY_milliseconds
-                  0x006718                  _DELAY_microseconds
- .text            0x00674c         0x50 build/default/production/mcc_generated_files/clock.o
-                  0x00674c                  _CLOCK_Initialize
- .text            0x00679c         0x4a build/default/production/main.o
-                  0x0067b8                  _main
- .text            0x0067e6         0x46 build/default/production/mcc_generated_files/system.o
-                  0x006804                  _SYSTEM_Initialize
- .text            0x00682c         0x34 build/default/production/mcc_generated_files/adc2.o
-                  0x00682c                  _ADC2_Initialize
-                  0x00684e                  _ADC2_CallBack
-                  0x006854                  _ADC2_SetInterruptHandler
- .text            0x006860         0x32 build/default/production/mcc_generated_files/adc1.o
-                  0x006860                  _ADC1_Initialize
-                  0x006880                  _ADC1_CallBack
-                  0x006886                  _ADC1_SetInterruptHandler
+.text             0x0062cc        0x616
+ .text            0x0062cc         0xc0 build/default/production/function_api.o
+                  0x0062cc                  _sendStringtoPenal
+                  0x0062f2                  _calculateCRC16
+                  0x006350                  _calculateCheckSum
+ .text            0x00638c         0xb8 build/default/production/mcc_generated_files/tmr2.o
+                  0x00638c                  _TMR2_Initialize
+                  0x0063b0                  _TMR2_Period16BitSet
+                  0x0063c2                  _TMR2_Period16BitGet
+                  0x0063ca                  _TMR2_Counter16BitSet
+                  0x0063dc                  _TMR2_Counter16BitGet
+                  0x0063ea                  _TMR2_SetInterruptHandler
+                  0x0063fa                  _TMR2_Start
+                  0x00640a                  _TMR2_Stop
+                  0x006414                  _TMR2_GetElapsedThenClear
+                  0x00642c                  _TMR2_SoftwareCounterGet
+                  0x006438                  _TMR2_SoftwareCounterClear
+ .text            0x006444         0xb8 build/default/production/mcc_generated_files/tmr3.o
+                  0x006444                  _TMR3_Initialize
+                  0x006468                  _TMR3_Period16BitSet
+                  0x00647a                  _TMR3_Period16BitGet
+                  0x006482                  _TMR3_Counter16BitSet
+                  0x006494                  _TMR3_Counter16BitGet
+                  0x0064a2                  _TMR3_SetInterruptHandler
+                  0x0064b2                  _TMR3_Start
+                  0x0064c2                  _TMR3_Stop
+                  0x0064cc                  _TMR3_GetElapsedThenClear
+                  0x0064e4                  _TMR3_SoftwareCounterGet
+                  0x0064f0                  _TMR3_SoftwareCounterClear
+ .text            0x0064fc         0xb4 build/default/production/relay_control.o
+                  0x00655c                  _RELAY_setOnTest
+                  0x00657a                  _RELAY_setOffTest
+                  0x00658e                  _RELAY_setOn
+                  0x0065a4                  _RELAY_setOff
+ .text            0x0065b0         0xb0 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0065b0                  _INTERRUPT_Initialize
+ .text            0x006660         0x82 build/default/production/timer_api.o
+                  0x006660                  _TMR2_CallBack
+                  0x006692                  _TMR3_CallBack
+                  0x00669a                  _tickTimer1ms
+ .text            0x0066e2         0x62 build/default/production/engineer_mode.o
+                  0x0066e2                  _ENGINEERMODE_testLed
+                  0x0066f0                  _ENGINEERMODE_testRelay
+                  0x00670c                  _ENGINEERMODE_testGFCI
+                  0x006728                  _ENGINEERMODE_testRFID
+                  0x00673e                  _ENGINEERMODE_testReturnVerify
+ .text            0x006744         0x56 build/default/production/mcc_generated_files/delay.o
+                  0x006744                  _DELAY_milliseconds
+                  0x006766                  _DELAY_microseconds
+ .text            0x00679a         0x50 build/default/production/mcc_generated_files/clock.o
+                  0x00679a                  _CLOCK_Initialize
+ .text            0x0067ea         0x4a build/default/production/main.o
+                  0x006806                  _main
+ .text            0x006834         0x46 build/default/production/mcc_generated_files/system.o
+                  0x006852                  _SYSTEM_Initialize
+ .text            0x00687a         0x36 build/default/production/mcc_generated_files/adc2.o
+                  0x00687a                  _ADC2_Initialize
+                  0x00689e                  _ADC2_CallBack
+                  0x0068a4                  _ADC2_SetInterruptHandler
+ .text            0x0068b0         0x32 build/default/production/mcc_generated_files/adc1.o
+                  0x0068b0                  _ADC1_Initialize
+                  0x0068d0                  _ADC1_CallBack
+                  0x0068d6                  _ADC1_SetInterruptHandler
 
-.init.delay32     0x006892         0x1c
- .init.delay32    0x006892         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
-                  0x006892                  ___delay32
+.init.delay32     0x0068e2         0x1c
+ .init.delay32    0x0068e2         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
+                  0x0068e2                  ___delay32
 
-.text             0x0068ae         0x32
- .text            0x0068ae         0x1a build/default/production/mcc_generated_files/ext_int.o
-                  0x0068ae                  _EX_INT1_CallBack
-                  0x0068bc                  _EXT_INT_Initialize
- .text            0x0068c8         0x18 build/default/production/mcc_generated_files/traps.o
-                  0x0068c8                  _TRAPS_halt_on_error
+.text             0x0068fe         0x32
+ .text            0x0068fe         0x1a build/default/production/mcc_generated_files/ext_int.o
+                  0x0068fe                  _EX_INT1_CallBack
+                  0x00690c                  _EXT_INT_Initialize
+ .text            0x006918         0x18 build/default/production/mcc_generated_files/traps.o
+                  0x006918                  _TRAPS_halt_on_error

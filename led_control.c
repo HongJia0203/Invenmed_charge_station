@@ -1200,6 +1200,7 @@ void LED_Test(void) {
  * Note:            None
  ********************************************************************/
 void LED_setChargeStateDisplay(void) {
+    DebugAndRfid_Printf("Set ChargeState LED Display\r\n");
     int sg;
     for (sg = 0; sg < 24; sg++) {
         if (sg < 13) {
